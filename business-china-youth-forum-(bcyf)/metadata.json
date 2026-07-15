@@ -1,0 +1,6 @@
+{
+  "name": "Business China Youth Forum (BCYF)",
+  "description": "A modern, highly immersive, glassmorphic bilingual portal for the Business China Youth Forum featuring real-time countdowns, dynamic schedules, and speaker highlights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
