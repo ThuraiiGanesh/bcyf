@@ -1,25 +1,8 @@
-# Node.js
-**/node_modules/
-**/dist/
-**/build/
-**/coverage/
-
-# OS/Logs
-**/*.log
-**/.DS_Store
-Thumbs.db
-
-# Environment variables
-**/.env*
-!**/.env.example
-
-# Local IDE/Editor configs
-.vscode/
-.idea/
-.gemini/
-.agents/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
