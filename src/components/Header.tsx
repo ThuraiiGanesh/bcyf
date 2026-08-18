@@ -39,11 +39,11 @@ export default function Header({
   }, []);
 
   const navItems = [
-    { id: 'about', label: t.navAbout },
-    { id: 'schedule', label: t.navSchedule },
-    { id: 'speakers', label: t.navSpeakers },
-    { id: 'interactive', label: t.navInteractive },
-    { id: 'faq', label: t.navFaq }
+    { id: 'agenda', label: language === 'en' ? 'Agenda' : '议程' },
+    { id: 'watch', label: language === 'en' ? 'Watch' : '观看' },
+    { id: 'about', label: language === 'en' ? 'About Us' : '关于我们', href: '#about' },
+    { id: 'youth-forum', label: language === 'en' ? 'Youth Forum' : '青年论坛', href: 'https://www.businesschina.org.sg' },
+    { id: 'fcgf', label: 'FCGF', href: 'https://fcgf2025.businesschina.org.sg' }
   ];
 
   const handleNavClick = (sectionId: string) => {

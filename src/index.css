@@ -67,3 +67,56 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Placeholder utilities for content-pending sections */
+.placeholder-box {
+  background: #e2e8f0;
+  border: 2px dashed #94a3b8;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s;
+}
+
+.placeholder-box:hover {
+  border-color: #162292;
+}
+
+.placeholder-text {
+  color: #94a3b8;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.placeholder-photo {
+  background: #cbd5e1;
+  border: 2px dashed #94a3b8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 0.625rem;
+  font-weight: 700;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.placeholder-video {
+  background: #e2e8f0;
+  border: 2px dashed #94a3b8;
+  border-radius: 0.75rem;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  gap: 0.5rem;
+}
