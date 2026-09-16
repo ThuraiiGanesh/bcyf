@@ -52,14 +52,22 @@ export interface Partner {
   url: string;
 }
 
-export interface PollQuestion {
+export interface EventDetails {
+  dateEn: string;
+  dateZh: string;
+  venueEn: string;
+  venueZh: string;
+  themeEn: string;
+  themeZh: string;
+}
+
+export interface ConfirmedSession {
   id: string;
-  question: string;
-  questionZh: string;
-  options: {
-    id: string;
-    text: string;
-    textZh: string;
-    votes: number;
-  }[];
+  sessionNumber: number;
+  sessionTypeEn: string;
+  sessionTypeZh: string;
+  titleEn: string;
+  titleZh: string;
+  descriptionEn: string;
+  descriptionZh: string;
 }

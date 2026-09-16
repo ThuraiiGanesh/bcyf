@@ -1,103 +1,158 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, User } from 'lucide-react';
+import { Language } from '../types';
+import { TRANSLATIONS } from '../data';
 
-function SpeakerCard({ index }: { index: number; key?: React.Key }) {
+interface HighlightsCarouselProps {
+  language: Language;
+}
+
+function SpeakerSkeletonCard({ index }: { index: number }) {
   return (
-    <div className="flex-shrink-0 w-44 sm:w-52 space-y-3 text-center">
-      <div className="placeholder-photo w-20 h-20 sm:w-24 sm:h-24 mx-auto">
-        <span className="text-[8px]">PHOTO</span>
+    <div className="flex-shrink-0 w-48 sm:w-56 bg-white border border-slate-200/80 rounded-2xl p-5 text-center space-y-4 shadow-sm hover:shadow transition-shadow">
+      <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
+        <User className="w-8 h-8 text-slate-300" />
       </div>
-      <div className="space-y-1">
-        <p className="placeholder-text text-sm font-semibold">[Speaker {index} Name]</p>
-        <p className="placeholder-text text-xs">[Title]</p>
-        <p className="placeholder-text text-[11px]">[Organisation]</p>
+      <div className="space-y-2">
+        <div className="h-4 bg-slate-200/80 rounded-md w-3/4 mx-auto animate-pulse" />
+        <div className="h-3 bg-slate-100 rounded-md w-5/6 mx-auto" />
+        <div className="h-2.5 bg-slate-100 rounded-md w-1/2 mx-auto" />
       </div>
+      <span className="inline-block text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+        [Speaker {index} - Pending]
+      </span>
     </div>
   );
 }
 
-export default function HighlightsCarousel() {
-  const [activeSlide, setActiveSlide] = React.useState(0);
-  const slides = ['HIGHLIGHTS', 'SPEAKERS'];
+export default function HighlightsCarousel({ language }: HighlightsCarouselProps) {
+  const t = TRANSLATIONS[language];
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    const scrollAmount = 280;
+    scrollContainerRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <section id="highlights" className="relative py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
-        {/* Dots Nav at Top */}
-        <div className="flex justify-center gap-2 mb-10">
-          {slides.map((label, i) => (
-            <button
-              key={label}
-              onClick={() => setActiveSlide(i)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                activeSlide === i
-                  ? 'bg-brand-blue text-white shadow-md'
-                  : 'bg-white text-slate-500 border border-slate-200 hover:border-brand-blue/40'
-              }`}
-            >
-              <span className={`w-2 h-2 rounded-full ${activeSlide === i ? 'bg-white' : 'bg-slate-300'}`} />
-              {label}
-            </button>
-          ))}
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+          className="text-center space-y-3"
+        >
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full inline-block">
+            {t.highlightsBadge}
+          </span>
+        </motion.div>
+
+        {/* GOH & VIP Row (2025 Structural Reference) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* GOH Card Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white rounded-2xl border border-slate-200 p-8 text-center space-y-4 shadow-sm"
+          >
+            <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest text-amber-700 bg-amber-50 border border-amber-200 px-3.5 py-1 rounded-full">
+              {t.gohBadge}
+            </span>
+            <div className="w-28 h-28 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
+              <User className="w-12 h-12 text-slate-300" />
+            </div>
+            <div className="space-y-1.5 pt-1">
+              <p className="text-base font-display font-bold text-slate-500">
+                [GOH — Pending Confirmation]
+              </p>
+              <p className="text-xs text-slate-400">
+                {t.pendingTitle}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* VIP Card Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white rounded-2xl border border-slate-200 p-8 text-center space-y-4 shadow-sm"
+          >
+            <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest text-brand-blue bg-blue-50 border border-blue-200 px-3.5 py-1 rounded-full">
+              {t.vipBadge}
+            </span>
+            <div className="w-28 h-28 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
+              <User className="w-12 h-12 text-slate-300" />
+            </div>
+            <div className="space-y-1.5 pt-1">
+              <p className="text-base font-display font-bold text-slate-500">
+                [VIP — Pending Confirmation]
+              </p>
+              <p className="text-xs text-slate-400">
+                {t.pendingTitle}
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Slide Content */}
+        {/* SPEAKERS Carousel Section */}
         <motion.div
-          key={activeSlide}
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="space-y-6 pt-4"
         >
-          {activeSlide === 0 ? (
-            /* HIGHLIGHTS Slide — GOH + VIP */
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* GOH Card */}
-              <div className="glass-card rounded-2xl p-8 text-center space-y-4">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-600 bg-amber-50 border border-amber-100 px-3 py-1 rounded-full">
-                  Guest-of-Honour
-                </span>
-                <div className="placeholder-photo w-28 h-28 mx-auto">
-                  <span className="text-[9px]">GOH PHOTO</span>
-                </div>
-                <div className="space-y-1">
-                  <p className="placeholder-text text-lg font-display font-bold">[PLACEHOLDER — GOH name]</p>
-                  <p className="placeholder-text text-sm">[PLACEHOLDER — GOH title]</p>
-                </div>
-              </div>
+          <div className="text-center space-y-1">
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-brand-navy">
+              {t.speakersBadge}
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-500">
+              {t.speakersTbc}
+            </p>
+          </div>
 
-              {/* VIP Card */}
-              <div className="glass-card rounded-2xl p-8 text-center space-y-4">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-brand-blue bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
-                  VIP
-                </span>
-                <div className="placeholder-photo w-28 h-28 mx-auto">
-                  <span className="text-[9px]">VIP PHOTO</span>
-                </div>
-                <div className="space-y-1">
-                  <p className="placeholder-text text-lg font-display font-bold">[PLACEHOLDER — VIP name]</p>
-                  <p className="placeholder-text text-sm">[PLACEHOLDER — VIP title]</p>
-                </div>
-              </div>
+          <div className="relative group">
+            {/* Scroll Container */}
+            <div
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-5 pb-6 pt-2 no-scrollbar px-2 sm:px-6"
+            >
+              {Array.from({ length: 8 }).map((_, i) => (
+                <SpeakerSkeletonCard key={i} index={i + 1} />
+              ))}
             </div>
-          ) : (
-            /* SPEAKERS Slide — Scrollable Row */
-            <div className="relative">
-              <div className="flex overflow-x-auto gap-6 pb-4 no-scrollbar px-4">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <SpeakerCard key={i} index={i + 1} />
-                ))}
-              </div>
-              {/* Scroll Hints */}
-              <div className="hidden sm:flex absolute top-1/2 -translate-y-1/2 -left-4 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md items-center justify-center text-slate-400 pointer-events-none">
-                <ChevronLeft className="w-5 h-5" />
-              </div>
-              <div className="hidden sm:flex absolute top-1/2 -translate-y-1/2 -right-4 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md items-center justify-center text-slate-400 pointer-events-none">
-                <ChevronRight className="w-5 h-5" />
-              </div>
-            </div>
-          )}
+
+            {/* Left Scroll Button */}
+            <button
+              onClick={() => scroll('left')}
+              className="absolute top-1/2 -translate-y-1/2 -left-3 sm:-left-5 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-blue hover:border-brand-blue/40 transition-all cursor-pointer z-10"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* Right Scroll Button */}
+            <button
+              onClick={() => scroll('right')}
+              className="absolute top-1/2 -translate-y-1/2 -right-3 sm:-right-5 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-blue hover:border-brand-blue/40 transition-all cursor-pointer z-10"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </motion.div>
 
       </div>

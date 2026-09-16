@@ -40,16 +40,21 @@ export default function Header({
 
   const navItems = [
     { id: 'agenda', label: language === 'en' ? 'Agenda' : '议程' },
-    { id: 'watch', label: language === 'en' ? 'Watch' : '观看' },
-    { id: 'about', label: language === 'en' ? 'About Us' : '关于我们', href: '#about' },
+    { id: 'about', label: language === 'en' ? 'About Us' : '关于我们' },
+    { id: 'watch', label: language === 'en' ? 'Watch' : '回顾' },
     { id: 'youth-forum', label: language === 'en' ? 'Youth Forum' : '青年论坛', href: 'https://www.businesschina.org.sg' },
     { id: 'fcgf', label: 'FCGF', href: 'https://fcgf2025.businesschina.org.sg' }
   ];
 
-  const handleNavClick = (sectionId: string) => {
-    setActiveSection(sectionId);
+  const handleNavClick = (item: { id: string; href?: string }) => {
+    if (item.href && item.href.startsWith('http')) {
+      window.open(item.href, '_blank', 'noopener,noreferrer');
+      setMobileMenuOpen(false);
+      return;
+    }
+    setActiveSection(item.id);
     setMobileMenuOpen(false);
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(item.id);
     if (element) {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -89,7 +94,7 @@ export default function Header({
                 <button
                   key={item.id}
                   id={`nav-item-${item.id}`}
-                  onClick={() => handleNavClick(item.id)}
+                  onClick={() => handleNavClick(item)}
                   className={`px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold font-display transition-all duration-200 relative cursor-pointer ${
                     isActive
                       ? 'text-brand-blue'
@@ -190,7 +195,7 @@ export default function Header({
                   <button
                     key={item.id}
                     id={`mobile-nav-item-${item.id}`}
-                    onClick={() => handleNavClick(item.id)}
+                    onClick={() => handleNavClick(item)}
                     className={`w-full text-left px-3 py-2.5 rounded-xl text-xs sm:text-sm font-semibold font-display transition-all ${
                     isActive
                       ? 'bg-blue-50 text-brand-blue border border-blue-100'

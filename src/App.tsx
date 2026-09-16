@@ -64,28 +64,28 @@ export default function App() {
       />
 
       {/* 2. Hero Section */}
-      <HeroSection />
+      <HeroSection language={language} />
 
       {/* 3. Forum Theme Section */}
-      <ForumTheme />
+      <ForumTheme language={language} />
 
       {/* 4. Highlights Carousel */}
-      <HighlightsCarousel />
+      <HighlightsCarousel language={language} />
 
       {/* 5. Agenda Section */}
-      <AgendaSection />
+      <AgendaSection language={language} />
 
       {/* 6. About Us Section */}
-      <AboutUs />
+      <AboutUs language={language} />
 
       {/* 7. Watch Section */}
-      <WatchSection />
+      <WatchSection language={language} />
 
       {/* 8. Photo Gallery */}
-      <PhotoGallery />
+      <PhotoGallery language={language} />
 
       {/* 9. Partners/Sponsors Section */}
-      <PartnersSection />
+      <PartnersSection language={language} />
 
       {/* Register Modal */}
       <RegisterModal
