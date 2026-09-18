@@ -1,7 +1,8 @@
+import React from 'react';
 import { motion } from 'motion/react';
-import { Clock, User, AlertCircle } from 'lucide-react';
+import { Clock, User, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { Language } from '../types';
-import { CONFIRMED_SESSIONS_2026, TRANSLATIONS } from '../data';
+import { RECOMMENDED_FINAL_TIMELINE_2026, TRANSLATIONS, GOH_2026 } from '../data';
 
 interface AgendaSectionProps {
   language: Language;
@@ -9,12 +10,12 @@ interface AgendaSectionProps {
 
 function SpeakerChipSkeleton({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200/80 rounded-xl px-3 py-2">
-      <div className="w-8 h-8 rounded-full bg-slate-200/80 border border-dashed border-slate-300 shrink-0 flex items-center justify-center">
-        <User className="w-4 h-4 text-slate-400" />
+    <div className="flex items-center gap-2 bg-slate-50 border border-slate-200/80 rounded-xl px-2.5 py-1.5">
+      <div className="w-7 h-7 rounded-full bg-slate-200/80 border border-dashed border-slate-300 shrink-0 flex items-center justify-center">
+        <User className="w-3.5 h-3.5 text-slate-400" />
       </div>
-      <div className="space-y-1 min-w-0 flex-1">
-        <div className="h-3 bg-slate-200 rounded w-4/5 animate-pulse" />
+      <div className="space-y-0.5 min-w-0 flex-1">
+        <div className="h-2.5 bg-slate-200 rounded w-3/4 animate-pulse" />
         <span className="text-[10px] font-mono text-slate-400 block truncate">
           {label}
         </span>
@@ -26,6 +27,60 @@ function SpeakerChipSkeleton({ label }: { label: string }) {
 export default function AgendaSection({ language }: AgendaSectionProps) {
   const isEn = language === 'en';
   const t = TRANSLATIONS[language];
+  const [expandedSessions, setExpandedSessions] = React.useState<Record<string, boolean>>({
+    'item-9': true,
+    'item-10': true,
+    'item-12': true,
+  });
+
+  const toggleSession = (id: string) => {
+    setExpandedSessions(prev => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const getTypeBadge = (type: string, isMajor?: boolean) => {
+    if (isMajor) {
+      return (
+        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue bg-blue-50 border border-blue-200/80 px-2.5 py-0.5 rounded-full">
+          <Sparkles className="w-3 h-3" />
+          {isEn ? 'Core Session' : '核心环节'}
+        </span>
+      );
+    }
+    switch (type) {
+      case 'keynote':
+        return (
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
+            {isEn ? 'Keynote / Address' : '演讲 / 致辞'}
+          </span>
+        );
+      case 'ceremony':
+        return (
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-full">
+            {isEn ? 'Ceremony' : '仪式'}
+          </span>
+        );
+      case 'break':
+        return (
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+            {isEn ? 'Networking Break' : '中场茶歇'}
+          </span>
+        );
+      case 'exhibition':
+        return (
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-full">
+            {isEn ? 'Showcase' : '展区'}
+          </span>
+        );
+      case 'registration':
+        return (
+          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
+            {isEn ? 'Registration' : '报到'}
+          </span>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <section id="agenda" className="relative py-20 sm:py-28 bg-white border-b border-slate-200/60">
@@ -42,74 +97,164 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-blue bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full inline-block">
             {t.agendaBadge}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-brand-navy">
-            {isEn ? 'Programme Agenda' : '论坛议程'}
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-brand-navy tracking-tight">
+            {isEn ? 'Official Programme Agenda' : '论坛官方议程'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
-            {t.agendaSubtitle}
+            {isEn
+              ? 'Schedule for Business China Youth Forum 2026'
+              : '2026年通商中国青年论坛日程安排'}
           </p>
         </motion.div>
 
-        {/* Notice of Pending Run-of-Show Timings */}
-        <div className="bg-slate-50 border border-dashed border-slate-300 rounded-2xl p-4 flex items-center gap-3 text-slate-600 max-w-3xl mx-auto">
-          <AlertCircle className="w-5 h-5 text-brand-blue shrink-0" />
-          <p className="text-xs sm:text-sm leading-relaxed">
-            {isEn
-              ? 'Detailed timeline, session timings, and final sequence are currently pending resolution across organizing committees. The confirmed sessions below reflect the core programme structure.'
-              : '论坛具体时间节点与详细开幕流程正由组委会核定中。以下为已确认的核心论坛环节与描述。'}
-          </p>
-        </div>
-
-        {/* Confirmed Sessions Timeline */}
-        <div className="divide-y divide-slate-100 max-w-5xl mx-auto">
-          {CONFIRMED_SESSIONS_2026.map((session, index) => {
-            const title = isEn ? session.titleEn : session.titleZh;
-            const desc = isEn ? session.descriptionEn : session.descriptionZh;
-            const sessionType = isEn ? session.sessionTypeEn : session.sessionTypeZh;
+        {/* Confirmed 14 Timeline Items */}
+        <div className="max-w-4xl mx-auto space-y-3">
+          {RECOMMENDED_FINAL_TIMELINE_2026.map((item, index) => {
+            const title = isEn ? item.titleEn : item.titleZh;
+            const subtitle = isEn ? item.subtitleEn : item.subtitleZh;
+            const desc = isEn ? item.descriptionEn : item.descriptionZh;
+            const isMajor = item.isMajorSession;
+            const isExpanded = expandedSessions[item.id] ?? false;
 
             return (
               <motion.div
-                key={session.id}
-                initial={{ opacity: 0, y: 15 }}
+                key={item.id}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start"
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.35, delay: index * 0.03 }}
+                className={`rounded-2xl border transition-all duration-200 ${
+                  isMajor
+                    ? 'bg-gradient-to-r from-[#F0F5FC]/60 via-white to-white border-blue-200/90 shadow-sm hover:shadow-md'
+                    : 'bg-white border-slate-200/80 hover:border-slate-300 hover:bg-slate-50/50'
+                }`}
               >
-                {/* Time Column (Skeleton / Pending) */}
-                <div className="md:col-span-3 space-y-2">
-                  <div className="inline-flex items-center gap-1.5 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg">
-                    <Clock className="w-3.5 h-3.5 text-slate-400" />
-                    <span className="text-xs font-mono font-bold text-slate-500">
-                      {t.agendaTimingPending}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-brand-blue block">
-                      {sessionType}
-                    </span>
-                  </div>
-                </div>
+                <div className="p-4 sm:p-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    
+                    {/* Time & Badges */}
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="inline-flex items-center gap-1.5 bg-slate-100/90 border border-slate-200/90 px-3 py-1.5 rounded-xl">
+                        <Clock className="w-3.5 h-3.5 text-brand-blue" />
+                        <span className="text-xs font-mono font-bold text-slate-700 whitespace-nowrap">
+                          {item.time}
+                        </span>
+                      </div>
+                      {getTypeBadge(item.type, isMajor)}
+                    </div>
 
-                {/* Session Description (Exact Confirmed Copy) */}
-                <div className="md:col-span-6 space-y-2.5">
-                  <h3 className="text-base sm:text-lg font-display font-bold text-brand-navy leading-snug">
-                    {title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    {desc}
-                  </p>
-                </div>
+                    {/* Title */}
+                    <div className="flex-1 min-w-0 sm:px-3">
+                      <div className="flex items-center gap-2">
+                        {isMajor && item.sessionNumber && (
+                          <span className="text-xs font-mono font-bold text-brand-blue shrink-0">
+                            [Session {item.sessionNumber}]
+                          </span>
+                        )}
+                        <h3 className={`font-display text-sm sm:text-base leading-snug truncate ${
+                          isMajor ? 'font-extrabold text-brand-navy' : 'font-semibold text-slate-800'
+                        }`}>
+                          {title}
+                        </h3>
+                      </div>
+                    </div>
 
-                {/* Speakers Chips (Skeleton Placeholder) */}
-                <div className="md:col-span-3 space-y-2">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                    {isEn ? 'Panelists & Guests' : '出席嘉宾'}
-                  </span>
-                  <div className="space-y-2">
-                    <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
-                    <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
+                    {/* Toggle button for major sessions */}
+                    {isMajor && (
+                      <button
+                        onClick={() => toggleSession(item.id)}
+                        className="self-end sm:self-center text-xs font-medium text-brand-blue hover:text-blue-800 flex items-center gap-1 cursor-pointer bg-blue-50/80 px-2.5 py-1 rounded-lg border border-blue-100 transition-colors"
+                        aria-expanded={isExpanded}
+                      >
+                        <span>{isExpanded ? (isEn ? 'Less' : '收起') : (isEn ? 'Details' : '详情')}</span>
+                        {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                      </button>
+                    )}
+
                   </div>
+
+                  {/* Expandable Core Session Details */}
+                  {isMajor && isExpanded && (
+                    <div className="mt-4 pt-4 border-t border-blue-100/80 space-y-4">
+                      {subtitle && (
+                        <p className="text-xs font-mono font-semibold text-brand-blue">
+                          {subtitle}
+                        </p>
+                      )}
+
+                      {desc && (
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          {desc}
+                        </p>
+                      )}
+
+                      {/* Speaker presentation */}
+                      {item.id === 'item-9' ? (
+                        /* Session 1 Fireside Chat Speaker Card (Mr Desmond Tan Kok Ming) */
+                        <div className="bg-white rounded-xl border border-blue-200/80 p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={GOH_2026.photoUrl}
+                              alt={isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
+                              className="w-12 h-12 rounded-full object-cover border-2 border-brand-blue/30 shadow-xs"
+                            />
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <span className="text-xs sm:text-sm font-bold text-brand-navy">
+                                  {isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
+                                </span>
+                                <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
+                                  {isEn ? 'Speaker & GOH' : '主礼嘉宾兼演讲者'}
+                                </span>
+                              </div>
+                              <p className="text-[11px] text-slate-600 leading-tight mt-0.5">
+                                {isEn ? GOH_2026.postEn : GOH_2026.postZh}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="sm:border-l sm:border-slate-100 sm:pl-4">
+                            <span className="text-[10px] font-mono text-slate-400 block mb-1">
+                              {isEn ? 'Moderator' : '主持人'}
+                            </span>
+                            <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
+                          </div>
+                        </div>
+                      ) : (
+                        /* Other Sessions with Speakers/Moderators Pending */
+                        <div className="space-y-1.5 pt-1">
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                            {isEn ? 'Panelists & Speakers (Pending Final Confirmation)' : '演讲与研讨嘉宾（待最终确认）'}
+                          </span>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
+                            <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Non-major sessions with keynote speaker (e.g. Opening Address by GOH) */}
+                  {item.speakerPhoto && !isMajor && (
+                    <div className="mt-3 pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                      <img
+                        src={item.speakerPhoto}
+                        alt={isEn ? item.speakerEn : item.speakerZh}
+                        className="w-7 h-7 rounded-full object-cover border border-slate-200"
+                      />
+                      <div className="text-xs">
+                        <span className="font-semibold text-brand-navy">
+                          {isEn ? item.speakerEn : item.speakerZh}
+                        </span>
+                        <span className="text-slate-400 mx-1.5">·</span>
+                        <span className="text-slate-500 text-[11px]">
+                          {isEn ? item.speakerRoleEn : item.speakerRoleZh}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
                 </div>
               </motion.div>
             );
@@ -122,7 +267,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xs text-slate-400 italic text-center font-medium pt-4"
+          className="text-xs text-slate-400 italic text-center font-medium pt-2"
         >
           {t.agendaFootnote}
         </motion.p>

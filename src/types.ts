@@ -71,3 +71,47 @@ export interface ConfirmedSession {
   descriptionEn: string;
   descriptionZh: string;
 }
+
+export interface GOHPerson {
+  nameEn: string;
+  nameZh: string;
+  postEn: string;
+  postZh: string;
+  mpEn: string;
+  mpZh: string;
+  photoUrl: string;
+  fullPhotoUrl: string;
+  bioEn: string;
+  bioZh: string;
+  dualRoleNoteEn: string;
+  dualRoleNoteZh: string;
+}
+
+export interface TimelineItem {
+  id: string;
+  time: string;
+  titleEn: string;
+  titleZh: string;
+  type: 'registration' | 'exhibition' | 'admin' | 'ceremony' | 'keynote' | 'session' | 'break';
+  isMajorSession?: boolean;
+  sessionNumber?: number;
+  subtitleEn?: string;
+  subtitleZh?: string;
+  descriptionEn?: string;
+  descriptionZh?: string;
+  speakerEn?: string;
+  speakerZh?: string;
+  speakerRoleEn?: string;
+  speakerRoleZh?: string;
+  speakerPhoto?: string;
+  moderatorPending?: boolean;
+  panelistsPending?: boolean;
+}
+
+export interface GalleryPhoto {
+  id: string;
+  src: string;
+  thumb: string;
+  alt: string;
+}
+

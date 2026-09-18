@@ -1,4 +1,4 @@
-import { EventDetails, ConfirmedSession, Speaker, AgendaItem, FAQItem, Partner } from './types';
+import { EventDetails, ConfirmedSession, Speaker, AgendaItem, FAQItem, Partner, GOHPerson, TimelineItem, GalleryPhoto } from './types';
 
 export const EVENT_BASICS_2026: EventDetails = {
   dateEn: '24 October 2026 (Saturday), 11:00am – 6:00pm',
@@ -26,6 +26,21 @@ export const FORUM_THEME_2026 = {
       '本次论坛主题《乘风破浪：共创未来新职场》，正是向每一位在时代洪流中前行的青年发出的诚挚邀约。我们呼吁青年跳出传统线性职业规划的框架，主动、大胆地构想未来职场与个人发展的新可能性。我们期待与各位青年共同探讨，如何在拥抱最新趋势的同时磨炼出难以被替代的适应力、技术敏锐度与跨文化协同力，并在时代的浪潮中不断地拓宽自身认知和能力边界。愿每一位青年都能乘新趋势之浪，破逆境之风，在充满变局的世界中实现自己对未来的美好构想。'
     ]
   }
+};
+
+export const GOH_2026: GOHPerson = {
+  nameEn: 'Mr Desmond Tan Kok Ming',
+  nameZh: '陈国明',
+  postEn: "Senior Minister of State, Prime Minister's Office; Deputy Secretary-General, NTUC",
+  postZh: '总理公署高级政务部长；全国职工总会副秘书长',
+  mpEn: 'MP for Pasir Ris-Changi GRC (Pasir Ris Central)',
+  mpZh: '白沙-榜鹅集选区（白沙中分区）国会议员',
+  photoUrl: '/desmond-tan-headshot.jpg',
+  fullPhotoUrl: '/desmond-tan.jpg',
+  bioEn: "Mr Desmond Tan is the Deputy Secretary-General of NTUC since 30 June 2022 and Senior Minister of State in the Prime Minister's Office. He is MP for Pasir Ris-Changi GRC (Pasir Ris Central). He previously served as Minister of State for Home Affairs, and Sustainability and the Environment, and spent over 30 years in public service including as CED of the People's Association and Chief of Staff (General Staff), MINDEF.",
+  bioZh: '陈国明先生自2022年6月30日起担任全国职工总会副秘书长，并任总理公署高级政务部长。他同时担任白沙-榜鹅集选区（白沙中分区）国会议员。此前，他曾任内政部兼永续发展与环境部政务部长，并在公共服务领域任职30余年，历任人民协会总执行长及新加坡武装部队总参谋长。',
+  dualRoleNoteEn: 'Guest of Honour & Fireside Chat Speaker',
+  dualRoleNoteZh: '主礼嘉宾兼炉边对话演讲嘉宾'
 };
 
 export const CONFIRMED_SESSIONS_2026: ConfirmedSession[] = [
@@ -80,6 +95,131 @@ export const ABOUT_US_2026 = {
   }
 };
 
+export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
+  {
+    id: 'item-1',
+    time: '11:00',
+    titleEn: 'Registration Commences',
+    titleZh: '注册开始',
+    type: 'registration'
+  },
+  {
+    id: 'item-2',
+    time: '11:00 – 17:00',
+    titleEn: 'Gallery Showcase',
+    titleZh: '展览区开放',
+    type: 'exhibition'
+  },
+  {
+    id: 'item-4',
+    time: '12:50',
+    titleEn: 'Guests to be seated',
+    titleZh: '嘉宾就座',
+    type: 'admin'
+  },
+  {
+    id: 'item-5',
+    time: '13:00 – 13:05',
+    titleEn: 'Opening of Forum',
+    titleZh: '论坛开幕',
+    type: 'ceremony'
+  },
+  {
+    id: 'item-6',
+    time: '13:05 – 13:15',
+    titleEn: 'Opening Address by Guest-of-Honour (Mr Desmond Tan Kok Ming)',
+    titleZh: '主礼嘉宾致开幕辞（陈国明先生）',
+    type: 'keynote',
+    speakerEn: 'SMS Desmond Tan Kok Ming',
+    speakerZh: '陈国明高级政务部长',
+    speakerRoleEn: "Senior Minister of State, Prime Minister's Office; Deputy Secretary-General, NTUC",
+    speakerRoleZh: '总理公署高级政务部长；全国职工总会副秘书长',
+    speakerPhoto: '/desmond-tan-headshot.jpg'
+  },
+  {
+    id: 'item-7',
+    time: '13:15 – 13:25',
+    titleEn: 'Opening Remarks by Business China CEO',
+    titleZh: '通商中国总裁致开幕辞',
+    type: 'keynote'
+  },
+  {
+    id: 'item-8',
+    time: '13:25 – 13:35',
+    titleEn: 'Launch Ceremony (MOU with Temasek Polytechnic)',
+    titleZh: '启动仪式（与淡马锡理工学院签署谅解备忘录）',
+    type: 'ceremony'
+  },
+  {
+    id: 'item-9',
+    time: '13:35 – 14:15',
+    titleEn: 'Fireside Chat with Mr Desmond Tan Kok Ming',
+    titleZh: '与陈国明高级政务部长炉边对话',
+    type: 'session',
+    isMajorSession: true,
+    sessionNumber: 1,
+    subtitleEn: 'Navigating the New Business Landscape and Way of Working',
+    subtitleZh: '共探商业新格局与工作新范式',
+    descriptionEn: 'Technological disruption, demographic changes, and deeper regional connectivity are reshaping the way work is defined across Asia. For young individuals, this equates to entering a landscape where jobs are rapidly being redesigned. This fireside chat with SMS Desmond Tan will explore what this changing environment means for the next generation, and what questions young people should be asking as they prepare for the future.',
+    descriptionZh: '本区域内的工作范式正深受技术变革、人口结构变化及区域互联互通深化等因素的影响而持续重塑。本次与总理公署高级政务部长陈国明先生的炉边对话，将聚焦这一变动环境对下一代所带来的启示，并探讨青年在面向未来时应提出哪些关键问题。',
+    speakerEn: 'SMS Desmond Tan Kok Ming',
+    speakerZh: '陈国明高级政务部长',
+    speakerRoleEn: "Guest of Honour & Fireside Chat Speaker",
+    speakerRoleZh: '主礼嘉宾兼炉边对话演讲嘉宾',
+    speakerPhoto: '/desmond-tan-headshot.jpg',
+    moderatorPending: true
+  },
+  {
+    id: 'item-10',
+    time: '14:15 – 15:15',
+    titleEn: 'Panel: Emerging Frontiers in Technology',
+    titleZh: '专题讨论：智能时代的"工作革命"：价值重构与青年机遇',
+    type: 'session',
+    isMajorSession: true,
+    sessionNumber: 2,
+    subtitleEn: 'Understanding How Emerging Frontiers in Technology Are Reshaping Industry',
+    subtitleZh: '智能时代的"工作革命"：价值重构与青年机遇',
+    descriptionEn: 'Emerging technologies and their associated industries are often indicative of future economic transformations. This panel explores three transformations — Future Media, Future Health and Future Connectivity — through cross-industry case studies, helping youths identify transferable competencies and adaptive mindsets for future-ready careers.',
+    descriptionZh: '新兴科技及相关产业往往是经济模式转型的风向指标。本论坛将围绕未来媒体、未来健康与未来互联三大转型方向，通过跨行业案例研讨，帮助青年提炼可迁移的核心职业能力。',
+    panelistsPending: true
+  },
+  {
+    id: 'item-11',
+    time: '15:15 – 15:30',
+    titleEn: 'Break',
+    titleZh: '中场休息',
+    type: 'break'
+  },
+  {
+    id: 'item-12',
+    time: '15:30 – 16:30',
+    titleEn: 'Grand Debate',
+    titleZh: '青年大辩论：AI赋能：缩小差距，还是加剧青年职场不平等？',
+    type: 'session',
+    isMajorSession: true,
+    sessionNumber: 3,
+    subtitleEn: 'This House Believes That AI-Driven Empowerment Has Exacerbated Structural Inequalities for Youths in the Workforce',
+    subtitleZh: 'AI赋能：缩小差距，还是加剧青年职场不平等？',
+    descriptionEn: 'Artificial intelligence is rapidly transforming how young people learn, work and build their careers. This Grand Debate asks: is AI truly democratising opportunity, or deepening existing inequalities? Format: 3 vs 3, Asian/Australasian Debate Format, 60 minutes.',
+    descriptionZh: '人工智能正迅速改变青年的学习、工作方式与职业发展。本场青年大辩论将探讨：AI究竟是在打破机会壁垒，还是正在形成新的数字鸿沟？辩论形式：三对三，亚洲/澳亚式辩论赛制，共60分钟。',
+    panelistsPending: true
+  },
+  {
+    id: 'item-13',
+    time: '16:30 – 16:40',
+    titleEn: 'Closing Address by BCYF Chairpersons',
+    titleZh: 'BCYF主席致闭幕辞',
+    type: 'ceremony'
+  },
+  {
+    id: 'item-14',
+    time: '16:40 – 16:50',
+    titleEn: 'BCYF Survey / Group Photo',
+    titleZh: 'BCYF问卷调查与大合影',
+    type: 'admin'
+  }
+];
+
 export const WATCH_2026 = {
   featured: {
     year: '2025',
@@ -91,24 +231,42 @@ export const WATCH_2026 = {
   pastEditions: [
     {
       year: '2024',
-      titleEn: 'BCYF 2024 Highlights',
+      titleEn: 'BCYF 2024 Highlight Video',
       titleZh: '2024年通商中国青年论坛精彩回顾',
-      placeholderText: 'Event Highlight 2024'
+      youtubeUrl: 'https://youtu.be/6qTRDlwWaRY',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/6qTRDlwWaRY'
     },
     {
       year: '2023',
-      titleEn: 'BCYF 2023 Highlights',
+      titleEn: 'BCYF 2023 Highlight Video',
       titleZh: '2023年通商中国青年论坛精彩回顾',
-      placeholderText: 'Event Highlight 2023'
+      youtubeUrl: 'https://www.youtube.com/watch?v=e0HXuVA1Y_s',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/e0HXuVA1Y_s'
     },
     {
       year: '2022',
-      titleEn: 'BCYF 2022 Highlights',
+      titleEn: 'BCYF 2022 Highlight Video',
       titleZh: '2022年通商中国青年论坛精彩回顾',
-      placeholderText: 'Event Highlight 2022'
+      youtubeUrl: 'https://www.youtube.com/watch?v=7yJFyYCgUS0',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/7yJFyYCgUS0'
     }
   ]
 };
+
+export const GALLERY_PHOTOS_2025: GalleryPhoto[] = [
+  "BCYF_0040.jpg", "BCYF_0151.jpg", "BCYF_0240.jpg", "BCYF_0281.jpg", "BCYF_0285.jpg",
+  "BCYF_0373.jpg", "BCYF_0375.jpg", "BCYF_0406.jpg", "BCYF_0431.jpg", "BCYF_0483.jpg",
+  "BCYF_0529.jpg", "SMP02423.jpg", "SMP02457.jpg", "SMP02489.jpg", "SMP02502.jpg",
+  "SMP02610.jpg", "SMP02615.jpg", "SMP02629.jpg", "SMP02659.jpg", "SMP02661.jpg",
+  "SMP02683.jpg", "SMP02742.jpg", "SMP02785.jpg", "SMP02814.jpg", "SMP02861.jpg",
+  "SMP02905.jpg", "SMP02911.jpg", "SMP02920.jpg", "SMP02924.jpg", "SMP03000.jpg",
+  "SMP03021.jpg", "SMP03028.jpg", "SMP03058.jpg", "SMP03061.jpg"
+].map((filename, i) => ({
+  id: `gallery-${i + 1}`,
+  src: `/gallery/${filename}`,
+  thumb: `/gallery/thumb_${filename}`,
+  alt: `Business China Youth Forum Moment ${i + 1}`
+}));
 
 // Kept for backward compatibility or empty skeletons
 export const SPEAKERS: Speaker[] = [];

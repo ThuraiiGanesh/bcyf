@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { Language } from '../types';
-import { TRANSLATIONS } from '../data';
+import { TRANSLATIONS, GOH_2026 } from '../data';
 
 interface HighlightsCarouselProps {
   language: Language;
@@ -27,6 +27,7 @@ function SpeakerSkeletonCard({ index }: { index: number }) {
 }
 
 export default function HighlightsCarousel({ language }: HighlightsCarouselProps) {
+  const isEn = language === 'en';
   const t = TRANSLATIONS[language];
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
@@ -58,26 +59,50 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
 
         {/* GOH & VIP Row (2025 Structural Reference) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* GOH Card Placeholder */}
+          {/* GOH Confirmed Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-2xl border border-slate-200 p-8 text-center space-y-4 shadow-sm"
+            className="bg-white rounded-2xl border border-blue-200/80 p-6 sm:p-7 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
           >
-            <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest text-amber-700 bg-amber-50 border border-amber-200 px-3.5 py-1 rounded-full">
-              {t.gohBadge}
-            </span>
-            <div className="w-28 h-28 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
-              <User className="w-12 h-12 text-slate-300" />
+            {/* Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+                {t.gohBadge}
+              </span>
+              <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-full">
+                {isEn ? GOH_2026.dualRoleNoteEn : GOH_2026.dualRoleNoteZh}
+              </span>
             </div>
+
+            {/* Official Headshot */}
+            <div className="relative w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-tr from-brand-blue/30 via-slate-100 to-amber-200/50 shadow-inner">
+              <img
+                src={GOH_2026.photoUrl}
+                alt={isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
+                className="w-full h-full rounded-full object-cover shadow-sm bg-white"
+              />
+            </div>
+
+            {/* Names & Titles */}
             <div className="space-y-1.5 pt-1">
-              <p className="text-base font-display font-bold text-slate-500">
-                [GOH — Pending Confirmation]
+              <h4 className="text-lg sm:text-xl font-display font-extrabold text-brand-navy">
+                {isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
+              </h4>
+              <p className="text-xs sm:text-sm font-semibold text-brand-blue leading-snug">
+                {isEn ? GOH_2026.postEn : GOH_2026.postZh}
               </p>
-              <p className="text-xs text-slate-400">
-                {t.pendingTitle}
+              <p className="text-[11px] font-mono text-slate-500">
+                {isEn ? GOH_2026.mpEn : GOH_2026.mpZh}
+              </p>
+            </div>
+
+            {/* Exact Confirmed Bio Blurb */}
+            <div className="pt-2 border-t border-slate-100 text-left">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                {isEn ? GOH_2026.bioEn : GOH_2026.bioZh}
               </p>
             </div>
           </motion.div>

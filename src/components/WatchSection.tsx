@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Play } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { Language } from '../types';
 import { WATCH_2026, TRANSLATIONS } from '../data';
 
@@ -35,7 +35,7 @@ export default function WatchSection({ language }: WatchSectionProps) {
           </p>
         </motion.div>
 
-        {/* Featured Video (Confirmed BCYF 2025 Highlight Video) */}
+        {/* 1. Featured Video (BCYF 2025 Highlight Video) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,15 +44,19 @@ export default function WatchSection({ language }: WatchSectionProps) {
           className="max-w-4xl mx-auto space-y-3"
         >
           <div className="flex items-center justify-between px-1">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-navy">
-              {featured.year} — {isEn ? featured.titleEn : featured.titleZh}
-            </span>
-            <span className="text-[10px] font-mono font-semibold uppercase text-brand-blue bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-blue animate-pulse" />
+              <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-brand-navy">
+                {featured.year} — {isEn ? featured.titleEn : featured.titleZh}
+              </span>
+            </div>
+            <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase text-brand-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+              <Sparkles className="w-3 h-3" />
               {t.featuredVideo}
             </span>
           </div>
 
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900">
+          <div className="relative aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
             <iframe
               src={featured.embedUrl}
               title={featured.titleEn}
@@ -63,37 +67,43 @@ export default function WatchSection({ language }: WatchSectionProps) {
           </div>
         </motion.div>
 
-        {/* Grid of Past Videos */}
+        {/* 2. Grid of Past Videos (2024, 2023, 2022) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-4 pt-4"
+          className="space-y-6 pt-6"
         >
-          <h3 className="text-lg sm:text-xl font-display font-bold text-brand-navy text-center">
-            {t.pastVideos}
-          </h3>
+          <div className="text-center space-y-1">
+            <h3 className="text-lg sm:text-xl font-display font-bold text-brand-navy">
+              {t.pastVideos}
+            </h3>
+            <p className="text-xs text-slate-400 font-mono">
+              {isEn ? 'Archived highlight videos from previous editions' : '往届精彩回顾视频'}
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {pastEditions.map((item) => (
               <div
                 key={item.year}
-                className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-4 space-y-3 shadow-sm hover:shadow transition-shadow"
+                className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-3.5 space-y-3 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="aspect-video rounded-xl bg-slate-200/80 border border-slate-300/80 flex flex-col items-center justify-center text-slate-500 gap-2">
-                  <div className="w-10 h-10 rounded-full bg-white/90 shadow flex items-center justify-center">
-                    <Play className="w-4 h-4 text-brand-blue fill-brand-blue ml-0.5" />
-                  </div>
-                  <span className="text-[11px] font-mono font-semibold text-slate-600">
-                    {item.placeholderText}
-                  </span>
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-xs border border-slate-200 bg-slate-900">
+                  <iframe
+                    src={item.embedUrl}
+                    title={item.titleEn}
+                    className="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
                 </div>
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 px-1">
                   <span className="text-[11px] font-mono font-bold text-brand-blue block">
                     {item.year}
                   </span>
-                  <p className="text-xs font-semibold text-slate-700">
+                  <p className="text-xs font-bold text-slate-800">
                     {isEn ? item.titleEn : item.titleZh}
                   </p>
                 </div>
