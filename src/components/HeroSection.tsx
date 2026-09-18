@@ -81,8 +81,18 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 <span className="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider block">
                   {isEn ? 'Venue' : '举办地点'}
                 </span>
-                <span className="text-sm sm:text-base font-semibold text-brand-navy mt-0.5 block">
-                  {isEn ? EVENT_BASICS_2026.venueEn : EVENT_BASICS_2026.venueZh}
+                <span className="text-sm sm:text-base font-semibold text-brand-navy mt-0.5 block leading-snug">
+                  {isEn ? (
+                    <>
+                      <span>Temasek Polytechnic Auditorium 1,</span>
+                      <span className="block">21 Tampines Ave 1, Singapore 529757</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>淡马锡理工学院第一大礼堂，</span>
+                      <span className="block">新加坡淡马锡大道21号，邮编529757</span>
+                    </>
+                  )}
                 </span>
               </div>
             </div>

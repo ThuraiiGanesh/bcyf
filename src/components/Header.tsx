@@ -42,7 +42,6 @@ export default function Header({
     { id: 'agenda', label: language === 'en' ? 'Agenda' : '议程' },
     { id: 'about', label: language === 'en' ? 'About Us' : '关于我们' },
     { id: 'watch', label: language === 'en' ? 'Watch' : '回顾' },
-    { id: 'youth-forum', label: language === 'en' ? 'Youth Forum' : '青年论坛', href: 'https://www.businesschina.org.sg' },
     { id: 'fcgf', label: 'FCGF', href: 'https://fcgf2025.businesschina.org.sg' }
   ];
 

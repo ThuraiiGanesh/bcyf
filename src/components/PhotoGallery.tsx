@@ -16,11 +16,21 @@ export default function PhotoGallery({ language }: PhotoGalleryProps) {
 
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
     const amount = 380;
-    scrollRef.current.scrollBy({
-      left: direction === 'left' ? -amount : amount,
-      behavior: 'smooth',
-    });
+    if (direction === 'right') {
+      if (scrollLeft + clientWidth >= scrollWidth - 25) {
+        scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        return;
+      }
+      scrollRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+    } else {
+      if (scrollLeft <= 15) {
+        scrollRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+        return;
+      }
+      scrollRef.current.scrollBy({ left: -amount, behavior: 'smooth' });
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

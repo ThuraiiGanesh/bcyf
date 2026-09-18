@@ -33,11 +33,21 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
 
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
     const scrollAmount = 280;
-    scrollContainerRef.current.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth'
-    });
+    if (direction === 'right') {
+      if (scrollLeft + clientWidth >= scrollWidth - 25) {
+        scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        return;
+      }
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    } else {
+      if (scrollLeft <= 15) {
+        scrollContainerRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+        return;
+      }
+      scrollContainerRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
   };
 
   return (
