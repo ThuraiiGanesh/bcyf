@@ -171,7 +171,7 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
                 <img
                   src={CEO_2026.photoUrl}
                   alt={isEn ? CEO_2026.nameEn : CEO_2026.nameZh}
-                  className="w-full h-full rounded-full object-cover shadow-sm bg-white"
+                  className="w-full h-full rounded-full object-cover object-top shadow-sm bg-white"
                 />
               </div>
 

@@ -301,7 +301,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                       <img
                         src={item.speakerPhoto}
                         alt={isEn ? item.speakerEn : item.speakerZh}
-                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-brand-blue/30 shadow-sm shrink-0"
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover object-top border-2 border-brand-blue/30 shadow-sm shrink-0"
                       />
                       <div className="space-y-0.5">
                         <div className="flex flex-wrap items-center gap-2">
