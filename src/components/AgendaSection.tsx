@@ -251,29 +251,29 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                       {/* Speaker presentation */}
                       {item.sessionNumber === 1 ? (
                         /* Session 1 Fireside Chat Speaker Card (Mr Desmond Tan Kok Ming) */
-                        <div className="bg-white rounded-xl border border-blue-200/80 p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
-                          <div className="flex items-center gap-3">
+                        <div className="bg-white rounded-xl border border-blue-200/80 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+                          <div className="flex items-center gap-4">
                             <img
                               src={GOH_2026.photoUrl}
                               alt={isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
-                              className="w-12 h-12 rounded-full object-cover border-2 border-brand-blue/30 shadow-xs"
+                              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-brand-blue/40 shadow-sm shrink-0"
                             />
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <span className="text-xs sm:text-sm font-bold text-brand-navy">
+                            <div className="space-y-1">
+                              <div className="flex flex-wrap items-center gap-2">
+                                <span className="text-sm sm:text-base font-bold text-brand-navy">
                                   {isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
                                 </span>
-                                <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
+                                <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
                                   {isEn ? 'Speaker & GOH' : '主礼嘉宾兼演讲者'}
                                 </span>
                               </div>
-                              <p className="text-[11px] text-slate-600 leading-tight mt-0.5">
+                              <p className="text-xs sm:text-[13px] text-slate-600 leading-snug">
                                 {isEn ? GOH_2026.postEn : GOH_2026.postZh}
                               </p>
                             </div>
                           </div>
 
-                          <div className="sm:border-l sm:border-slate-100 sm:pl-4">
+                          <div className="sm:border-l sm:border-slate-100 sm:pl-5 shrink-0">
                             <span className="text-[10px] font-mono text-slate-400 block mb-1">
                               {isEn ? 'Moderator' : '主持人'}
                             </span>
@@ -297,20 +297,24 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
 
                   {/* Non-major sessions with keynote speaker (e.g. Opening Remarks by Business China CEO) */}
                   {item.speakerPhoto && !isMajor && (
-                    <div className="mt-3 pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                    <div className="mt-3.5 pt-3.5 border-t border-slate-100 flex items-center gap-3.5 bg-slate-50/70 p-3 rounded-xl border border-slate-200/60">
                       <img
                         src={item.speakerPhoto}
                         alt={isEn ? item.speakerEn : item.speakerZh}
-                        className="w-8 h-8 rounded-full object-cover border border-slate-200 shadow-2xs"
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-brand-blue/30 shadow-sm shrink-0"
                       />
-                      <div className="text-xs">
-                        <span className="font-semibold text-brand-navy">
-                          {isEn ? item.speakerEn : item.speakerZh}
-                        </span>
-                        <span className="text-slate-400 mx-1.5">·</span>
-                        <span className="text-slate-500 text-[11px]">
+                      <div className="space-y-0.5">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-bold text-brand-navy text-sm sm:text-base">
+                            {isEn ? item.speakerEn : item.speakerZh}
+                          </span>
+                          <span className="text-[10px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full">
+                            {isEn ? 'Opening Remarks' : '致开幕辞'}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-600 font-medium">
                           {isEn ? item.speakerRoleEn : item.speakerRoleZh}
-                        </span>
+                        </p>
                       </div>
                     </div>
                   )}
