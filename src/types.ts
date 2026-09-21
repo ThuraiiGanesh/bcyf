@@ -87,6 +87,20 @@ export interface GOHPerson {
   dualRoleNoteZh: string;
 }
 
+export interface CEOPerson {
+  nameEn: string;
+  nameZh: string;
+  postEn: string;
+  postZh: string;
+  appointmentEn: string;
+  appointmentZh: string;
+  photoUrl: string;
+  bioEn: string;
+  bioZh: string;
+  fullBioEn: string[];
+  fullBioZh: string[];
+}
+
 export interface TimelineItem {
   id: string;
   time: string;

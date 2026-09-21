@@ -103,7 +103,10 @@ export default function App() {
       />
 
       {/* 2. Hero Section */}
-      <HeroSection language={language} />
+      <HeroSection
+        language={language}
+        onOpenRegister={() => setRegisterModalOpen(true)}
+      />
 
       {/* 3. Forum Theme Section */}
       <ForumTheme language={language} />

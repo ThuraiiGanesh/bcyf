@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Clock, User, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Clock, User, Sparkles, ChevronDown, ChevronUp, Layers, Store, Compass, Briefcase } from 'lucide-react';
 import { Language } from '../types';
-import { RECOMMENDED_FINAL_TIMELINE_2026, TRANSLATIONS, GOH_2026 } from '../data';
+import { RECOMMENDED_FINAL_TIMELINE_2026, TRANSLATIONS, GOH_2026, GALLERY_SHOWCASE_HIGHLIGHT } from '../data';
 
 interface AgendaSectionProps {
   language: Language;
@@ -28,9 +28,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
   const isEn = language === 'en';
   const t = TRANSLATIONS[language];
   const [expandedSessions, setExpandedSessions] = React.useState<Record<string, boolean>>({
+    'item-8': true,
     'item-9': true,
-    'item-10': true,
-    'item-12': true,
+    'item-11': true,
   });
 
   const toggleSession = (id: string) => {
@@ -50,7 +50,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
       case 'keynote':
         return (
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Keynote / Address' : '演讲 / 致辞'}
+            {isEn ? 'Keynote / Remarks' : '致辞 / 演讲'}
           </span>
         );
       case 'ceremony':
@@ -68,13 +68,13 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
       case 'exhibition':
         return (
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Showcase' : '展区'}
+            {isEn ? 'Gallery Showcase' : '企业展区'}
           </span>
         );
       case 'registration':
         return (
           <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Registration' : '报到'}
+            {isEn ? 'Registration' : '登记就座'}
           </span>
         );
       default:
@@ -102,12 +102,72 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
             {isEn
-              ? 'Schedule for Business China Youth Forum 2026'
-              : '2026年通商中国青年论坛日程安排'}
+              ? 'Officially confirmed programme schedule for Business China Youth Forum 2026'
+              : '2026年通商中国青年论坛官方确认日程安排'}
           </p>
         </motion.div>
 
-        {/* Confirmed 14 Timeline Items */}
+        {/* Confirmed Gallery Showcase Highlight Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto rounded-2xl bg-gradient-to-br from-blue-900 via-brand-navy to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-blue-800/60 relative overflow-hidden"
+        >
+          {/* Subtle architectural decorative aura */}
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest bg-blue-500/20 text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-blue-400" />
+                  {isEn ? GALLERY_SHOWCASE_HIGHLIGHT.badgeEn : GALLERY_SHOWCASE_HIGHLIGHT.badgeZh}
+                </span>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/60 border border-emerald-700/60 px-2.5 py-1 rounded-full">
+                  11:00 – 17:00
+                </span>
+              </div>
+              <span className="text-xs text-blue-200/90 font-mono">
+                {isEn ? 'Outside Auditorium 1' : '淡马锡理工礼堂外展区'}
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
+              {isEn ? GALLERY_SHOWCASE_HIGHLIGHT.titleEn : GALLERY_SHOWCASE_HIGHLIGHT.titleZh}
+            </h3>
+
+            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+              {isEn ? GALLERY_SHOWCASE_HIGHLIGHT.descriptionEn : GALLERY_SHOWCASE_HIGHLIGHT.descriptionZh}
+            </p>
+
+            {/* Feature quick badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+              <div className="bg-white/10 rounded-xl p-3 border border-white/10 flex items-center gap-2.5">
+                <Briefcase className="w-4 h-4 text-blue-300 shrink-0" />
+                <span className="text-xs text-white font-medium">
+                  {isEn ? 'Internships & Careers' : '实习就业与职涯机会'}
+                </span>
+              </div>
+              <div className="bg-white/10 rounded-xl p-3 border border-white/10 flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-amber-300 shrink-0" />
+                <span className="text-xs text-white font-medium">
+                  {isEn ? 'AI Tech Product Demos' : 'AI科技与前沿创新展示'}
+                </span>
+              </div>
+              <div className="bg-white/10 rounded-xl p-3 border border-white/10 flex items-center gap-2.5">
+                <Store className="w-4 h-4 text-emerald-300 shrink-0" />
+                <span className="text-xs text-white font-medium">
+                  {isEn ? 'Young Entrepreneurs' : '青年创业故事分享展位'}
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Confirmed 13 Official Timeline Items */}
         <div className="max-w-4xl mx-auto space-y-3">
           {RECOMMENDED_FINAL_TIMELINE_2026.map((item, index) => {
             const title = isEn ? item.titleEn : item.titleZh;
@@ -122,7 +182,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.35, delay: index * 0.03 }}
+                transition={{ duration: 0.35, delay: index * 0.025 }}
                 className={`rounded-2xl border transition-all duration-200 ${
                   isMajor
                     ? 'bg-gradient-to-r from-[#F0F5FC]/60 via-white to-white border-blue-200/90 shadow-sm hover:shadow-md'
@@ -189,7 +249,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                       )}
 
                       {/* Speaker presentation */}
-                      {item.id === 'item-9' ? (
+                      {item.sessionNumber === 1 ? (
                         /* Session 1 Fireside Chat Speaker Card (Mr Desmond Tan Kok Ming) */
                         <div className="bg-white rounded-xl border border-blue-200/80 p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
                           <div className="flex items-center gap-3">
@@ -235,13 +295,13 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                     </div>
                   )}
 
-                  {/* Non-major sessions with keynote speaker (e.g. Opening Address by GOH) */}
+                  {/* Non-major sessions with keynote speaker (e.g. Opening Remarks by Business China CEO) */}
                   {item.speakerPhoto && !isMajor && (
                     <div className="mt-3 pt-3 border-t border-slate-100 flex items-center gap-2.5">
                       <img
                         src={item.speakerPhoto}
                         alt={isEn ? item.speakerEn : item.speakerZh}
-                        className="w-7 h-7 rounded-full object-cover border border-slate-200"
+                        className="w-8 h-8 rounded-full object-cover border border-slate-200 shadow-2xs"
                       />
                       <div className="text-xs">
                         <span className="font-semibold text-brand-navy">

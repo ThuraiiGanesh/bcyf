@@ -5,9 +5,10 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 
 interface HeroSectionProps {
   language: Language;
+  onOpenRegister?: () => void;
 }
 
-export default function HeroSection({ language }: HeroSectionProps) {
+export default function HeroSection({ language, onOpenRegister }: HeroSectionProps) {
   const isEn = language === 'en';
 
   return (
@@ -61,7 +62,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
             </p>
           </div>
 
-          {/* Confirmed Date, Time & Venue Card */}
+          {/* Confirmed Date, Time & Venue Card (Corrected End Time: 5:00pm) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto text-left pt-2">
             <div className="bg-white/90 border border-slate-200/80 rounded-2xl p-5 shadow-sm flex items-start space-x-3.5">
               <Calendar className="w-5 h-5 text-brand-blue shrink-0 mt-0.5" />
@@ -96,6 +97,27 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 </span>
               </div>
             </div>
+          </div>
+
+          {/* Hero Action CTAs */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5">
+            <button
+              id="hero-register-btn"
+              onClick={onOpenRegister}
+              className="px-6 py-3 rounded-xl bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-sm font-bold font-display shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center gap-2 group"
+            >
+              <span>{isEn ? 'Register Interest (Interim Sign-Up)' : '立即报名（预先意向登记）'}</span>
+              <Clock className="w-4 h-4 text-blue-200" />
+            </button>
+            <button
+              onClick={() => {
+                const el = document.getElementById('agenda');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-brand-navy border border-slate-200 text-xs sm:text-sm font-semibold font-display shadow-xs transition-colors cursor-pointer"
+            >
+              {isEn ? 'View Official Agenda' : '查看官方议程'}
+            </button>
           </div>
 
         </motion.div>
