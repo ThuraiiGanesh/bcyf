@@ -5,7 +5,7 @@
 
 import { Language } from '../types';
 import { TRANSLATIONS, INTERIM_REGISTRATION_URL, REGISTRATION_QR_URL } from '../data';
-import { X, Calendar, MapPin, Clock, ExternalLink, QrCode, Sparkles } from 'lucide-react';
+import { X, Calendar, MapPin, Clock, ExternalLink, QrCode } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface RegisterModalProps {
@@ -94,8 +94,12 @@ export default function RegisterModal({
               {/* Interim Registration Action Box */}
               <div className="bg-blue-50/80 border border-blue-200 rounded-2xl p-5 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-brand-blue text-white flex items-center justify-center shrink-0 shadow-xs">
-                    <Sparkles className="w-4 h-4" />
+                  <div className="w-8 h-8 rounded-xl bg-white border border-blue-200/90 p-1 flex items-center justify-center shrink-0 shadow-xs">
+                    <img
+                      src="/gmail-icon.png"
+                      alt="Email Sign-Up"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <div className="space-y-1">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue bg-white border border-blue-200 px-2 py-0.5 rounded-full inline-block">
