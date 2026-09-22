@@ -5,7 +5,7 @@
 
 import { Language } from '../types';
 import { TRANSLATIONS, INTERIM_REGISTRATION_URL, REGISTRATION_QR_URL } from '../data';
-import { X, Calendar, MapPin, Clock, ExternalLink, QrCode } from 'lucide-react';
+import { X, Calendar, MapPin, Clock, ExternalLink, QrCode, Ticket } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface RegisterModalProps {
@@ -22,7 +22,7 @@ export default function RegisterModal({
   const isEn = language === 'en';
   const t = TRANSLATIONS[language];
 
-  // SWAP NOTE: Replace INTERIM_REGISTRATION_URL when the official EO landing page is available
+  // Official landing page URL
   const handleOpenForm = () => {
     window.open(INTERIM_REGISTRATION_URL, '_blank', 'noopener,noreferrer');
   };
@@ -91,22 +91,18 @@ export default function RegisterModal({
                 </div>
               </div>
 
-              {/* Interim Registration Action Box */}
+              {/* Official Registration Action Box */}
               <div className="bg-blue-50/80 border border-blue-200 rounded-2xl p-5 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-white border border-blue-200/90 p-1 flex items-center justify-center shrink-0 shadow-xs">
-                    <img
-                      src="/gmail-icon.png"
-                      alt="Email Sign-Up"
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="w-8 h-8 rounded-xl bg-blue-100/80 border border-blue-200/90 flex items-center justify-center shrink-0 shadow-xs text-brand-blue">
+                    <Ticket className="w-4 h-4" />
                   </div>
                   <div className="space-y-1">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue bg-white border border-blue-200 px-2 py-0.5 rounded-full inline-block">
                       {t.interimFormTag}
                     </span>
                     <h4 className="text-sm font-display font-bold text-brand-navy">
-                      {isEn ? 'Priority Mailing List & Registration' : '优先通讯录与意向登记'}
+                      {isEn ? 'Official Forum Registration' : '青年论坛官方报名通道'}
                     </h4>
                     <p className="text-xs text-slate-600 leading-relaxed">
                       {t.registerModalPendingDesc}

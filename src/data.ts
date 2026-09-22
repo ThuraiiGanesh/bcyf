@@ -2,11 +2,11 @@ import { EventDetails, ConfirmedSession, Speaker, AgendaItem, FAQItem, Partner, 
 
 // =========================================================================
 // [REGISTRATION CONFIG]
-// Interim registration link (Mailing-list sign-up form):
-// https://forms.gle/arYvg9dxbyF7um5GA
-// >> SWAP THIS URL ONCE THE OFFICIAL EO REGISTRATION LANDING PAGE IS READY! <<
+// Official registration link (Live landing page):
+// https://tee.com.sg/bcyf2026/
 // =========================================================================
-export const INTERIM_REGISTRATION_URL = 'https://forms.gle/arYvg9dxbyF7um5GA';
+export const REGISTRATION_URL = 'https://tee.com.sg/bcyf2026/';
+export const INTERIM_REGISTRATION_URL = REGISTRATION_URL; // Kept for backwards compatibility
 export const REGISTRATION_QR_URL = '/registration-qr.png';
 
 export const EVENT_BASICS_2026: EventDetails = {
@@ -342,12 +342,12 @@ export const TRANSLATIONS = {
     navFcgf: 'FCGF',
     
     registerBtn: 'Register Now',
-    registrationPending: 'Registration link pending confirmation. Opening soon!',
+    registrationPending: 'Official registration is live now!',
     registerModalTitle: 'Delegate Registration',
-    registerModalPendingDesc: 'Official registration for BCYF 2026 will open shortly. In the interim, please join our priority mailing list via the sign-up form to register your interest and receive first-hand updates on ticketing and announcements.',
-    openInterimFormBtn: 'Open Sign-Up Form',
-    interimFormTag: 'Interim Priority Sign-Up',
-    scanQrNote: 'Or scan the QR code to sign up directly on mobile:',
+    registerModalPendingDesc: 'Official delegate registration for BCYF 2026 is now live. Click below to proceed to the registration portal or scan the QR code to register on mobile.',
+    openInterimFormBtn: 'Register on Official Portal',
+    interimFormTag: 'Official Registration Live',
+    scanQrNote: 'Or scan the QR code to register directly on mobile:',
     closeBtn: 'Close',
 
     highlightsBadge: 'HIGHLIGHTS',
@@ -400,12 +400,12 @@ export const TRANSLATIONS = {
     navFcgf: 'FCGF',
     
     registerBtn: '立即报名',
-    registrationPending: '报名通道即将开放，敬请期待！',
+    registrationPending: '官方报名通道现已正式开启！',
     registerModalTitle: '参会代表报名',
-    registerModalPendingDesc: '2026年通商中国青年论坛官方报名通道即将正式开启。在此期间，欢迎通过预先登记表格加入优先通讯录，第一时间获取票务发售及重磅嘉宾阵容的最新资讯。',
-    openInterimFormBtn: '前往登记表格',
-    interimFormTag: '预先意向登记',
-    scanQrNote: '或使用手机扫描二维码直接登记：',
+    registerModalPendingDesc: '2026年通商中国青年论坛官方报名通道现已正式开启。欢迎点击下方按钮前往官方报名页面，或使用手机扫描二维码直接完成报名。',
+    openInterimFormBtn: '前往官方报名页面',
+    interimFormTag: '官方报名通道开启',
+    scanQrNote: '或使用手机扫描二维码直接报名：',
     closeBtn: '关闭',
 
     highlightsBadge: '亮点聚焦',

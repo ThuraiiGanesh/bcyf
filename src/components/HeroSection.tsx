@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Language } from '../types';
 import { EVENT_BASICS_2026 } from '../data';
-import { Calendar, MapPin, Clock } from 'lucide-react';
+import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
   language: Language;
@@ -106,8 +106,8 @@ export default function HeroSection({ language, onOpenRegister }: HeroSectionPro
               onClick={onOpenRegister}
               className="px-6 py-3 rounded-xl bg-brand-blue hover:bg-brand-navy text-white text-xs sm:text-sm font-bold font-display shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center gap-2 group"
             >
-              <span>{isEn ? 'Register Interest (Interim Sign-Up)' : '立即报名（预先意向登记）'}</span>
-              <Clock className="w-4 h-4 text-blue-200" />
+              <span>{isEn ? 'Register Now' : '立即报名'}</span>
+              <ArrowRight className="w-4 h-4 text-blue-200 transition-transform group-hover:translate-x-0.5" />
             </button>
             <button
               onClick={() => {
