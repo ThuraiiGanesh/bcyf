@@ -52,6 +52,14 @@ export interface Partner {
   url: string;
 }
 
+export interface PartnerLogo {
+  id: string;
+  name: string;
+  nameZh?: string;
+  logo: string;
+  url?: string;
+}
+
 export interface EventDetails {
   dateEn: string;
   dateZh: string;

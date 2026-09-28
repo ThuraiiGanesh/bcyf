@@ -1,4 +1,4 @@
-import { EventDetails, ConfirmedSession, Speaker, AgendaItem, FAQItem, Partner, GOHPerson, CEOPerson, TimelineItem, GalleryPhoto } from './types';
+import { EventDetails, ConfirmedSession, Speaker, AgendaItem, FAQItem, Partner, PartnerLogo, GOHPerson, CEOPerson, TimelineItem, GalleryPhoto } from './types';
 
 // =========================================================================
 // [REGISTRATION CONFIG]
@@ -328,6 +328,79 @@ export const AGENDA_ITEMS: AgendaItem[] = [];
 export const FAQ_ITEMS: FAQItem[] = [];
 export const PARTNERS: Partner[] = [];
 
+// =========================================================================
+// OFFICIAL PARTNER & SPONSOR LOGOS (Unified Single Grid in EDM Order)
+// Easily extensible: Add new logo objects to the end of this list.
+// =========================================================================
+export const PARTNER_LOGOS: PartnerLogo[] = [
+  {
+    id: 'nyc',
+    name: 'National Youth Council Singapore',
+    nameZh: '新加坡全国青年理事会',
+    logo: '/images/partners/01-nyc.png',
+  },
+  {
+    id: 'hyperforge',
+    name: 'Hyperforge',
+    nameZh: 'Hyperforge',
+    logo: '/images/partners/02-hyperforge.jpg',
+  },
+  {
+    id: 'gkc',
+    name: 'China-Singapore Guangzhou Knowledge City',
+    nameZh: '中新广州知识城',
+    logo: '/images/partners/03-gkc.png',
+  },
+  {
+    id: 'keppel',
+    name: 'Keppel',
+    nameZh: '吉宝',
+    logo: '/images/partners/04-keppel.png',
+  },
+  {
+    id: 'chagee',
+    name: 'CHAGEE',
+    nameZh: '霸王茶姬',
+    logo: '/images/partners/05-chagee.png',
+  },
+  {
+    id: 'huawei',
+    name: 'Huawei',
+    nameZh: '华为',
+    logo: '/images/partners/06-huawei.png',
+  },
+  {
+    id: 'yuewen',
+    name: 'Yuewen',
+    nameZh: '阅文集团',
+    logo: '/images/partners/07-yuewen.png',
+  },
+  {
+    id: 'zall',
+    name: 'The Zall Bookstore',
+    nameZh: '卓尔书店',
+    logo: '/images/partners/08-zall.png',
+  },
+  {
+    id: 'csaia',
+    name: 'China-Singapore Artificial Intelligence Association',
+    nameZh: '中新人工智能协会',
+    logo: '/images/partners/09-csaia.png',
+  },
+  {
+    id: 'fuchsia-lane',
+    name: 'Fuchsia Lane Singapore',
+    nameZh: 'Fuchsia Lane 新加坡',
+    logo: '/images/partners/10-fuchsialane.png',
+  },
+  {
+    id: 'teahills',
+    name: 'Teahills',
+    nameZh: 'Teahills',
+    logo: '/images/partners/11-teahills.jpg',
+  },
+];
+
 export const TRANSLATIONS = {
   en: {
     navHome: 'Home',
@@ -376,13 +449,16 @@ export const TRANSLATIONS = {
     galleryBadge: '2025 PHOTO GALLERY',
     gallerySubtitle: 'Photos from the previous forum edition (Publicity team will upload 2026 photos after event).',
     
-    partnersBadge: 'Partners & Sponsors',
+    partnersBadge: 'Partners 合作伙伴',
+    partnersTitle: 'Partners & Sponsors',
+    partnersSubtitle: 'Proudly supported by our partner and sponsor organizations.',
     strategicPartners: 'Strategic Partners',
     singaporePartners: 'Singapore Partners',
     chinaPartners: 'China Partners',
     sponsors: 'Sponsors',
-    hostPartnerNote: 'Temasek Polytechnic is confirmed as host/partner for BCYF 2026.',
+    hostPartnerNote: 'Temasek Polytechnic is confirmed as host venue partner for BCYF 2026.',
     logoPending: 'LOGO PENDING',
+    andManyMore: 'and many more...',
     
     footerCopyright: '© 2026 Business China. All rights reserved. Business China (通商中国) is a non-profit organization.',
     footerSlogan: 'Nurturing bilingual and bicultural leadership for a connected world.'
@@ -434,13 +510,16 @@ export const TRANSLATIONS = {
     galleryBadge: '2025 精彩照片集锦',
     gallerySubtitle: '往届论坛活动精彩瞬间（2026年现场照片将在活动后由宣传组更新）。',
     
-    partnersBadge: '合作伙伴与赞助机构',
+    partnersBadge: 'Partners 合作伙伴',
+    partnersTitle: '合作伙伴与赞助机构',
+    partnersSubtitle: '衷心感谢各位合作伙伴与赞助机构的鼎力支持。',
     strategicPartners: '战略合作伙伴',
     singaporePartners: '新加坡合作伙伴',
     chinaPartners: '中国合作伙伴',
     sponsors: '赞助机构',
     hostPartnerNote: '淡马锡理工学院为2026年通商中国青年论坛官方场地合作方。',
     logoPending: '标志待更新',
+    andManyMore: '等等...',
     
     footerCopyright: '© 2026 通商中国。版权所有。通商中国（Business China）为非营利机构。',
     footerSlogan: '架设双语双文化桥梁，培育连接全球的杰出领袖。'
