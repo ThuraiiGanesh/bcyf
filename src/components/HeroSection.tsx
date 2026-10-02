@@ -91,7 +91,7 @@ export default function HeroSection({ language, onOpenRegister }: HeroSectionPro
                   ) : (
                     <>
                       <span>淡马锡理工学院第一大礼堂，</span>
-                      <span className="block">新加坡淡马锡大道21号，邮编529757</span>
+                      <span className="block">21 Tampines Ave 1, Singapore 529757</span>
                     </>
                   )}
                 </span>

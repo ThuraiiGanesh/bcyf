@@ -13,7 +13,7 @@ export const EVENT_BASICS_2026: EventDetails = {
   dateEn: '24 October 2026 (Saturday), 11:00am – 5:00pm',
   dateZh: '2026年10月24日（星期六），上午11:00 – 下午5:00',
   venueEn: 'Temasek Polytechnic Auditorium 1, 21 Tampines Ave 1, Singapore 529757',
-  venueZh: '淡马锡理工学院第一大礼堂，新加坡淡马锡大道21号，邮编529757',
+  venueZh: '淡马锡理工学院第一大礼堂，21 Tampines Ave 1, Singapore 529757',
   themeEn: 'Riding the New Wave: Future of Work Reimagined',
   themeZh: '乘风破浪：共创未来新职场'
 };
@@ -39,7 +39,7 @@ export const FORUM_THEME_2026 = {
 
 export const GOH_2026: GOHPerson = {
   nameEn: 'Mr Desmond Tan Kok Ming',
-  nameZh: '陈国明',
+  nameZh: '陈国明先生',
   postEn: "Senior Minister of State, Prime Minister's Office; Deputy Secretary-General, NTUC",
   postZh: '总理公署高级政务部长；全国职工总会副秘书长',
   mpEn: 'MP for Pasir Ris-Changi GRC (Pasir Ris Central)',
@@ -54,7 +54,7 @@ export const GOH_2026: GOHPerson = {
 
 export const CEO_2026: CEOPerson = {
   nameEn: 'Ms Kwek Poh Heok',
-  nameZh: '郭碧叶',
+  nameZh: '郭碧叶女士',
   postEn: 'Chief Executive Officer, Business China',
   postZh: '通商中国总裁',
   appointmentEn: 'Appointed CEO of Business China on 1 July 2025',
@@ -194,7 +194,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
     id: 'item-6',
     time: '13:15 – 13:20',
     titleEn: 'Launch Ceremony of China Ready Executive Programme',
-    titleZh: '中国通高管项目启动仪式（通商中国与淡马锡理工学院合办）',
+    titleZh: '在职培训课程启动仪式（通商中国与淡马锡理工学院合办）',
     type: 'ceremony'
   },
   {
@@ -217,7 +217,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
     descriptionEn: 'Technological disruption, demographic changes, and deeper regional connectivity are reshaping the way work is defined across Asia. For young individuals, this equates to entering a landscape where jobs are rapidly being redesigned. This fireside chat with SMS Desmond Tan will explore what this changing environment means for the next generation, and what questions young people should be asking as they prepare for the future.',
     descriptionZh: '本区域内的工作范式正深受技术变革、人口结构变化及区域互联互通深化等因素的影响而持续重塑。本次与总理公署高级政务部长陈国明先生的炉边对话，将聚焦这一变动环境对下一代所带来的启示，并探讨青年在面向未来时应提出哪些关键问题。',
     speakerEn: 'SMS Desmond Tan Kok Ming',
-    speakerZh: '陈国明高级政务部长',
+    speakerZh: '陈国明先生',
     speakerRoleEn: 'Guest of Honour & Fireside Chat Speaker',
     speakerRoleZh: '主礼嘉宾兼炉边对话演讲嘉宾',
     speakerPhoto: '/desmond-tan-headshot.jpg',
@@ -329,16 +329,17 @@ export const FAQ_ITEMS: FAQItem[] = [];
 export const PARTNERS: Partner[] = [];
 
 // =========================================================================
-// OFFICIAL PARTNER & SPONSOR LOGOS (Unified Single Grid in EDM Order)
-// Easily extensible: Add new logo objects to the end of this list.
+// OFFICIAL PARTNER & SPONSOR LOGOS (Two Groups: Strategic Partner & Sponsors/Partners)
+// Structured for easy swap and extension.
 // =========================================================================
-export const PARTNER_LOGOS: PartnerLogo[] = [
-  {
-    id: 'nyc',
-    name: 'National Youth Council Singapore',
-    nameZh: '新加坡全国青年理事会',
-    logo: '/images/partners/01-nyc.png',
-  },
+export const STRATEGIC_PARTNER: PartnerLogo = {
+  id: 'nyc',
+  name: 'National Youth Council Singapore',
+  nameZh: '新加坡全国青年理事会',
+  logo: '/images/partners/01-nyc.png',
+};
+
+export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
   {
     id: 'hyperforge',
     name: 'Hyperforge',
@@ -356,6 +357,12 @@ export const PARTNER_LOGOS: PartnerLogo[] = [
     name: 'Keppel',
     nameZh: '吉宝',
     logo: '/images/partners/04-keppel.png',
+  },
+  {
+    id: 'steelcore',
+    name: 'Steelcore',
+    nameZh: 'Steelcore',
+    logo: '/images/partners/steelcore.png',
   },
   {
     id: 'chagee',
@@ -399,6 +406,11 @@ export const PARTNER_LOGOS: PartnerLogo[] = [
     nameZh: 'Teahills',
     logo: '/images/partners/11-teahills.jpg',
   },
+];
+
+export const PARTNER_LOGOS: PartnerLogo[] = [
+  STRATEGIC_PARTNER,
+  ...SPONSORS_AND_PARTNERS,
 ];
 
 export const TRANSLATIONS = {
@@ -452,6 +464,8 @@ export const TRANSLATIONS = {
     partnersBadge: 'Partners 合作伙伴',
     partnersTitle: 'Partners & Sponsors',
     partnersSubtitle: 'Proudly supported by our partner and sponsor organizations.',
+    strategicPartner: 'Strategic Partner',
+    sponsorsAndPartners: 'Sponsors and Partners',
     strategicPartners: 'Strategic Partners',
     singaporePartners: 'Singapore Partners',
     chinaPartners: 'China Partners',
@@ -513,6 +527,8 @@ export const TRANSLATIONS = {
     partnersBadge: 'Partners 合作伙伴',
     partnersTitle: '合作伙伴与赞助机构',
     partnersSubtitle: '衷心感谢各位合作伙伴与赞助机构的鼎力支持。',
+    strategicPartner: '战略合作伙伴',
+    sponsorsAndPartners: '赞助机构与合作伙伴',
     strategicPartners: '战略合作伙伴',
     singaporePartners: '新加坡合作伙伴',
     chinaPartners: '中国合作伙伴',
