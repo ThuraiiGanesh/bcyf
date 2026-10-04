@@ -117,9 +117,6 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
                 <p className="text-xs sm:text-sm font-semibold text-brand-blue leading-snug">
                   {isEn ? GOH_2026.postEn : GOH_2026.postZh}
                 </p>
-                <p className="text-[11px] font-mono text-slate-500">
-                  {isEn ? GOH_2026.mpEn : GOH_2026.mpZh}
-                </p>
               </div>
 
               {/* Exact Confirmed Bio Blurb */}
@@ -185,10 +182,7 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
             </div>
 
             {/* Read Full Bio Modal trigger */}
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[10px] font-mono text-slate-400">
-                {isEn ? 'Business China Leadership' : '通商中国领导层'}
-              </span>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-end">
               <button
                 onClick={() => setSelectedBioPerson(CEO_2026)}
                 className="text-xs font-semibold text-brand-blue hover:text-brand-navy inline-flex items-center gap-1 cursor-pointer transition-colors"
