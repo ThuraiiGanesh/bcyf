@@ -46,7 +46,7 @@ export const GOH_2026: GOHPerson = {
   mpZh: '白沙-榜鹅集选区（白沙中分区）国会议员',
   photoUrl: '/desmond-tan-headshot.jpg',
   fullPhotoUrl: '/desmond-tan.jpg',
-  bioEn: "Mr Desmond Tan is the Deputy Secretary-General of NTUC since 30 June 2022 and Senior Minister of State in the Prime Minister's Office. He is MP for Pasir Ris-Changi GRC (Pasir Ris Central). He previously served as Minister of State for Home Affairs, and Sustainability and the Environment, and spent over 30 years in public service including as CED of the People's Association and Chief of Staff (General Staff), MINDEF.",
+  bioEn: "Mr Desmond Tan has been the Deputy Secretary-General of NTUC since 30 June 2022 and Senior Minister of State in the Prime Minister's Office. He is MP for Pasir Ris-Changi GRC (Pasir Ris Central). He previously served as Minister of State for Home Affairs, and Sustainability and the Environment, and spent over 30 years in public service including as CED of the People's Association and Chief of Staff (General Staff), MINDEF.",
   bioZh: '陈国明先生自2022年6月30日起担任全国职工总会副秘书长，并任总理公署高级政务部长。他同时担任白沙-榜鹅集选区（白沙中分区）国会议员。此前，他曾任内政部兼永续发展与环境部政务部长，并在公共服务领域任职30余年，历任人民协会总执行长及新加坡武装部队总参谋长。',
   dualRoleNoteEn: 'Guest of Honour & Fireside Chat Speaker',
   dualRoleNoteZh: '主礼嘉宾兼炉边对话演讲嘉宾'
@@ -131,7 +131,7 @@ export const ABOUT_US_2026 = {
     badge: 'ABOUT US',
     mainTitle: 'About Us',
     bcyfTitle: 'About Business China Youth Forum',
-    bcyfDesc: 'The Business China Youth Forum (BCYF) is held annually in tandem with the FutureChina Global Forum (FCGF). With the motto "By Youth, For Youth," this forum is organised by a dedicated group of enthusiastic young individuals, who curate discussions and sharing sessions with industry experts and academia on trending topics relevant to youth. Since 2019, the hybrid event has attracted close to 3000 youth participants from all over the world.',
+    bcyfDesc: "The Business China Youth Forum (BCYF) is held annually. With the motto 'By Youth, For Youth,' this forum is organised by a dedicated group of enthusiastic young individuals, who curate discussions and sharing sessions with industry experts and academia on trending topics relevant to youth. Since 2019, the hybrid event has attracted close to 3000 youth participants from all over the world.",
     bcTitle: 'About Business China',
     bcDesc: 'Launched in November 2007 by Founding Patron and Singapore\'s Founding Prime Minister, Mr Lee Kuan Yew, Business China aims to nurture a core pool of Singaporean bilingual and bicultural talents, and enterprises who can engage deeply in economic opportunities with China. Our work helps to foster mutual understanding, trust, and cooperation between Singapore and China, and deepen Singapore\'s role in bridging the world and China.'
   },
@@ -167,7 +167,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
   {
     id: 'item-3',
     time: '12:50',
-    titleEn: 'Guests to be seated',
+    titleEn: 'Guests to be Seated',
     titleZh: '宾客就座',
     type: 'admin'
   },
@@ -436,7 +436,7 @@ export const TRANSLATIONS = {
     closeBtn: 'Close',
 
     highlightsBadge: 'HIGHLIGHTS',
-    gohBadge: 'Guest-of-Honour',
+    gohBadge: 'Guest of Honour',
     ceoBadge: 'Business China CEO',
     readFullBio: 'Read Full Bio',
     closeBio: 'Close',
@@ -461,7 +461,7 @@ export const TRANSLATIONS = {
     galleryBadge: '2025 PHOTO GALLERY',
     gallerySubtitle: 'Photos from the previous forum edition (Publicity team will upload 2026 photos after event).',
     
-    partnersBadge: 'Partners 合作伙伴',
+    partnersBadge: 'PARTNERS',
     partnersTitle: 'Partners & Sponsors',
     partnersSubtitle: 'Proudly supported by our partner and sponsor organizations.',
     strategicPartner: 'Strategic Partner',
@@ -524,7 +524,7 @@ export const TRANSLATIONS = {
     galleryBadge: '2025 精彩照片集锦',
     gallerySubtitle: '往届论坛活动精彩瞬间（2026年现场照片将在活动后由宣传组更新）。',
     
-    partnersBadge: 'Partners 合作伙伴',
+    partnersBadge: '合作伙伴',
     partnersTitle: '合作伙伴与赞助机构',
     partnersSubtitle: '衷心感谢各位合作伙伴与赞助机构的鼎力支持。',
     strategicPartner: '战略合作伙伴',

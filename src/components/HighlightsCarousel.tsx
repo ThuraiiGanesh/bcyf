@@ -98,9 +98,6 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
                 <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
                   {t.gohBadge}
                 </span>
-                <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-full">
-                  {isEn ? GOH_2026.dualRoleNoteEn : GOH_2026.dualRoleNoteZh}
-                </span>
               </div>
 
               {/* Official Headshot */}
@@ -133,10 +130,7 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
               </div>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[10px] font-mono text-slate-400">
-                {isEn ? 'Fireside Chat Guest' : '炉边对话主讲嘉宾'}
-              </span>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-end">
               <button
                 onClick={() => setSelectedBioPerson(GOH_2026)}
                 className="text-xs font-semibold text-brand-blue hover:text-brand-navy inline-flex items-center gap-1 cursor-pointer transition-colors"
@@ -182,9 +176,6 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
                 </h4>
                 <p className="text-xs sm:text-sm font-semibold text-brand-blue leading-snug">
                   {isEn ? CEO_2026.postEn : CEO_2026.postZh}
-                </p>
-                <p className="text-[11px] font-mono text-slate-500">
-                  {isEn ? CEO_2026.appointmentEn : CEO_2026.appointmentZh}
                 </p>
               </div>
 

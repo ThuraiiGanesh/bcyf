@@ -37,50 +37,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
     setExpandedSessions(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const getTypeBadge = (type: string, isMajor?: boolean) => {
-    if (isMajor) {
-      return (
-        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider text-brand-blue bg-blue-50 border border-blue-200/80 px-2.5 py-0.5 rounded-full">
-          <Sparkles className="w-3 h-3" />
-          {isEn ? 'Core Session' : '核心环节'}
-        </span>
-      );
-    }
-    switch (type) {
-      case 'keynote':
-        return (
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Keynote / Remarks' : '致辞 / 演讲'}
-          </span>
-        );
-      case 'ceremony':
-        return (
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Ceremony' : '仪式'}
-          </span>
-        );
-      case 'break':
-        return (
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Networking Break' : '中场茶歇'}
-          </span>
-        );
-      case 'exhibition':
-        return (
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Gallery Showcase' : '企业展区'}
-          </span>
-        );
-      case 'registration':
-        return (
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
-            {isEn ? 'Registration' : '登记就座'}
-          </span>
-        );
-      default:
-        return null;
-    }
-  };
+
 
   return (
     <section id="agenda" className="relative py-20 sm:py-28 bg-white border-b border-slate-200/60">
@@ -192,7 +149,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                 <div className="p-4 sm:p-5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     
-                    {/* Time & Badges */}
+                    {/* Time */}
                     <div className="flex items-center gap-3 shrink-0">
                       <div className="inline-flex items-center gap-1.5 bg-slate-100/90 border border-slate-200/90 px-3 py-1.5 rounded-xl">
                         <Clock className="w-3.5 h-3.5 text-brand-blue" />
@@ -200,7 +157,6 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                           {item.time}
                         </span>
                       </div>
-                      {getTypeBadge(item.type, isMajor)}
                     </div>
 
                     {/* Title */}
@@ -264,7 +220,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                   {isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
                                 </span>
                                 <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
-                                  {isEn ? 'Speaker & GOH' : '主礼嘉宾兼演讲者'}
+                                  {isEn ? 'Guest of Honour' : '主礼嘉宾'}
                                 </span>
                               </div>
                               <p className="text-xs sm:text-[13px] text-slate-600 leading-snug">
