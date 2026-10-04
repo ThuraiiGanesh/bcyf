@@ -155,9 +155,6 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
                 <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-widest text-brand-blue bg-blue-50 border border-blue-200 px-3.5 py-1 rounded-full">
                   {t.ceoBadge}
                 </span>
-                <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
-                  {isEn ? 'Opening Remarks' : '致开幕辞'}
-                </span>
               </div>
 
               {/* Official Headshot (green top) */}
