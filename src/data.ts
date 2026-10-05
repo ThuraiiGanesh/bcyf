@@ -339,7 +339,7 @@ export const STRATEGIC_PARTNER: PartnerLogo = {
   logo: '/images/partners/01-nyc.png',
 };
 
-export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
+export const SPONSORS_ROW_1: PartnerLogo[] = [
   {
     id: 'hyperforge',
     name: 'Hyperforge',
@@ -365,10 +365,25 @@ export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
     logo: '/images/partners/steelcore.png',
   },
   {
+    id: 'hisense',
+    name: 'Hisense',
+    nameZh: '海信',
+    logo: '/images/partners/hisense.png',
+  },
+];
+
+export const PARTNERS_ROW_2: PartnerLogo[] = [
+  {
     id: 'chagee',
     name: 'CHAGEE',
     nameZh: '霸王茶姬',
     logo: '/images/partners/05-chagee.png',
+  },
+  {
+    id: 'ocbc',
+    name: 'OCBC',
+    nameZh: '华侨银行',
+    logo: '/images/partners/ocbc.png',
   },
   {
     id: 'huawei',
@@ -406,6 +421,11 @@ export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
     nameZh: 'Teahills',
     logo: '/images/partners/11-teahills.jpg',
   },
+];
+
+export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
+  ...SPONSORS_ROW_1,
+  ...PARTNERS_ROW_2,
 ];
 
 export const PARTNER_LOGOS: PartnerLogo[] = [
