@@ -131,7 +131,7 @@ export const ABOUT_US_2026 = {
     badge: 'ABOUT US',
     mainTitle: 'About Us',
     bcyfTitle: 'About Business China Youth Forum',
-    bcyfDesc: "The Business China Youth Forum (BCYF) is held annually. With the motto 'By Youth, For Youth,' this forum is organised by a dedicated group of enthusiastic young individuals, who curate discussions and sharing sessions with industry experts and academia on trending topics relevant to youth. Since 2019, the hybrid event has attracted close to 3000 youth participants from all over the world.",
+    bcyfDesc: "“Riding the New Wave: Future of Work Reimagined” brings youths together to explore how technology and global trends are reshaping careers, industries and the skills needed to stay relevant. Guided by the motto “By Youth, For Youth”, the Business China Youth Forum features discussions with industry experts and academia and a gallery showcase on emerging trends, entrepreneurship and cross-border opportunities, providing youths with practical insights, connections and a deeper understanding of developments in Singapore, China and the region.",
     bcTitle: 'About Business China',
     bcDesc: 'Launched in November 2007 by Founding Patron and Singapore\'s Founding Prime Minister, Mr Lee Kuan Yew, Business China aims to nurture a core pool of Singaporean bilingual and bicultural talents, and enterprises who can engage deeply in economic opportunities with China. Our work helps to foster mutual understanding, trust, and cooperation between Singapore and China, and deepen Singapore\'s role in bridging the world and China.'
   },
@@ -139,7 +139,7 @@ export const ABOUT_US_2026 = {
     badge: '关于我们',
     mainTitle: '关于我们',
     bcyfTitle: '关于通商中国青年论坛',
-    bcyfDesc: '通商中国青年论坛（BCYF）每年与慧眼中国环球论坛（FCGF）同期举行。本着"由青年，为青年"的宗旨，此论坛由一群才华洋溢的青年负责筹划，针对当下青年关心的热点课题与行业专家及学者展开深入的讨论与分享。自2019年以来，此活动已吸引了来自世界各地近3000名青年参与。',
+    bcyfDesc: '2026年通商中国青年论坛《乘风破浪：共创未来新职场》以“由青年，为青年”作使命，汇聚众多青年共同探索科技与全球趋势如何重塑职业和产业，并了解顺应时代所需要具备的相关技能。本次论坛将会包含行业专家与学者之间的专题讨论，以及关于新兴趋势、创业经历与跨境机遇的企业机构展示，为青年们提供新视野、新联系，同时使青年们对中国、新加坡及亚细安地区的发展拥有更深刻全面的认识。',
     bcTitle: '关于通商中国',
     bcDesc: '通商中国由创会赞助人新加坡建国总理李光耀先生在2007年11月启动，旨在凝聚一批核心的新加坡双语双文化人才和企业，作为推动与中国进行深层次经贸合作的中流砥柱。我们的活动项目致力于促进新加坡与中国人民之间的相互了解、信任和长期合作。'
   }
