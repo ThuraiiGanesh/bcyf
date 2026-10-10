@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, User, X, BookOpen, Sparkles } from 'lucide-react';
+import { X, BookOpen } from 'lucide-react';
 import { Language, GOHPerson, CEOPerson } from '../types';
 import { TRANSLATIONS, GOH_2026, CEO_2026 } from '../data';
 
@@ -8,53 +8,14 @@ interface HighlightsCarouselProps {
   language: Language;
 }
 
-// OC Request: Temporarily hide/close the Speakers segment on the live site until final list is confirmed
-const SHOW_SPEAKERS_SECTION = false;
 
-function SpeakerSkeletonCard({ index }: { index: number; key?: React.Key }) {
-  return (
-    <div className="flex-shrink-0 w-48 sm:w-56 bg-white border border-slate-200/80 rounded-2xl p-5 text-center space-y-4 shadow-sm hover:shadow transition-shadow">
-      <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
-        <User className="w-8 h-8 text-slate-300" />
-      </div>
-      <div className="space-y-2">
-        <div className="h-4 bg-slate-200/80 rounded-md w-3/4 mx-auto animate-pulse" />
-        <div className="h-3 bg-slate-100 rounded-md w-5/6 mx-auto" />
-        <div className="h-2.5 bg-slate-100 rounded-md w-1/2 mx-auto" />
-      </div>
-      <span className="inline-block text-[10px] font-mono text-slate-400 uppercase tracking-wider">
-        [Speaker {index} - Pending]
-      </span>
-    </div>
-  );
-}
 
 export default function HighlightsCarousel({ language }: HighlightsCarouselProps) {
   const isEn = language === 'en';
   const t = TRANSLATIONS[language];
-  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
   // Bio modal state
   const [selectedBioPerson, setSelectedBioPerson] = React.useState<GOHPerson | CEOPerson | null>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (!scrollContainerRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-    const scrollAmount = 280;
-    if (direction === 'right') {
-      if (scrollLeft + clientWidth >= scrollWidth - 25) {
-        scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        return;
-      }
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    } else {
-      if (scrollLeft <= 15) {
-        scrollContainerRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
-        return;
-      }
-      scrollContainerRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="highlights" className="relative py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/60">
@@ -195,52 +156,7 @@ export default function HighlightsCarousel({ language }: HighlightsCarouselProps
 
         </div>
 
-        {/* SPEAKERS Carousel Section (Temporarily Hidden per OC Request) */}
-        {SHOW_SPEAKERS_SECTION && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="space-y-6 pt-4"
-          >
-            <div className="text-center space-y-1">
-              <h3 className="text-xl sm:text-2xl font-display font-bold text-brand-navy">
-                {t.speakersBadge}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-500">
-                {t.speakersTbc}
-              </p>
-            </div>
 
-            <div className="relative group">
-              <div
-                ref={scrollContainerRef}
-                className="flex overflow-x-auto gap-5 pb-6 pt-2 no-scrollbar px-2 sm:px-6"
-              >
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <SpeakerSkeletonCard key={`speaker-card-${i + 1}`} index={i + 1} />
-                ))}
-              </div>
-
-              <button
-                onClick={() => scroll('left')}
-                className="absolute top-1/2 -translate-y-1/2 -left-3 sm:-left-5 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-blue hover:border-brand-blue/40 transition-all cursor-pointer z-10"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              <button
-                onClick={() => scroll('right')}
-                className="absolute top-1/2 -translate-y-1/2 -right-3 sm:-right-5 w-11 h-11 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-blue hover:border-brand-blue/40 transition-all cursor-pointer z-10"
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </motion.div>
-        )}
 
       </div>
 

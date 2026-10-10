@@ -10,6 +10,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ForumTheme from './components/ForumTheme';
 import HighlightsCarousel from './components/HighlightsCarousel';
+import SpeakersSection from './components/SpeakersSection';
 import AgendaSection from './components/AgendaSection';
 import AboutUs from './components/AboutUs';
 import WatchSection from './components/WatchSection';
@@ -63,7 +64,7 @@ export default function App() {
   // Handle section tracking during scroll
   React.useEffect(() => {
     const handleScrollTracking = () => {
-      const sections = ['home', 'forum-theme', 'highlights', 'agenda', 'about', 'watch', 'photo-gallery', 'partners'];
+      const sections = ['home', 'forum-theme', 'highlights', 'speakers', 'agenda', 'about', 'watch', 'photo-gallery', 'partners'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -111,10 +112,13 @@ export default function App() {
       {/* 3. Forum Theme Section */}
       <ForumTheme language={language} />
 
-      {/* 4. Highlights Carousel */}
+      {/* 4. Highlights (Leadership) */}
       <HighlightsCarousel language={language} />
 
-      {/* 5. Agenda Section */}
+      {/* 5. Confirmed Speakers Carousel */}
+      <SpeakersSection language={language} />
+
+      {/* 6. Agenda Section */}
       <AgendaSection language={language} />
 
       {/* 6. About Us Section */}

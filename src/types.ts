@@ -9,15 +9,25 @@ export interface Speaker {
   id: string;
   name: string;
   nameZh: string;
-  role: string;
-  roleZh: string;
-  company: string;
-  companyZh: string;
-  bio: string;
-  bioZh: string;
-  avatar: string; // URL or letter avatar seed
-  category: string; // e.g. "Keynote", "Panelist", "Moderator"
-  categoryZh: string;
+  sessionTagEn: 'Fireside Chat' | 'Panel' | 'Debate';
+  sessionTagZh: '炉边对话' | '分论坛' | '大辩论';
+  organizationEn?: string;
+  organizationZh?: string;
+  bioEn?: string;
+  bioZh?: string;
+  photoUrl?: string;
+  isModerator?: boolean;
+  roleTagEn?: string; // e.g. "Speaker" | "Moderator"
+  roleTagZh?: string;
+  // Backward compatibility fields
+  role?: string;
+  roleZh?: string;
+  company?: string;
+  companyZh?: string;
+  bio?: string;
+  avatar?: string;
+  category?: string;
+  categoryZh?: string;
 }
 
 export interface AgendaItem {

@@ -39,6 +39,7 @@ export default function Header({
   }, []);
 
   const navItems = [
+    { id: 'speakers', label: language === 'en' ? 'Speakers' : '演讲嘉宾' },
     { id: 'agenda', label: language === 'en' ? 'Agenda' : '议程' },
     { id: 'about', label: language === 'en' ? 'About Us' : '关于我们' },
     { id: 'watch', label: language === 'en' ? 'Watch' : '回顾' },

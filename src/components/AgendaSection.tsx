@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { Clock, User, Sparkles, ChevronDown, ChevronUp, Layers, Store, Compass, Briefcase } from 'lucide-react';
-import { Language } from '../types';
-import { RECOMMENDED_FINAL_TIMELINE_2026, TRANSLATIONS, GOH_2026, GALLERY_SHOWCASE_HIGHLIGHT } from '../data';
+import { motion, AnimatePresence } from 'motion/react';
+import { Clock, User, Sparkles, ChevronDown, ChevronUp, Layers, Store, Compass, Briefcase, X } from 'lucide-react';
+import { Language, Speaker } from '../types';
+import { RECOMMENDED_FINAL_TIMELINE_2026, TRANSLATIONS, GOH_2026, GALLERY_SHOWCASE_HIGHLIGHT, SPEAKERS_2026 } from '../data';
 
 interface AgendaSectionProps {
   language: Language;
@@ -32,6 +32,8 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
     'item-9': true,
     'item-11': true,
   });
+
+  const [selectedBioSpeaker, setSelectedBioSpeaker] = React.useState<Speaker | null>(null);
 
   const toggleSession = (id: string) => {
     setExpandedSessions(prev => ({ ...prev, [id]: !prev[id] }));
@@ -204,47 +206,257 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                         </p>
                       )}
 
-                      {/* Speaker presentation */}
-                      {item.sessionNumber === 1 ? (
-                        /* Session 1 Fireside Chat Speaker Card (Mr Desmond Tan Kok Ming) */
-                        <div className="bg-white rounded-xl border border-blue-200/80 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
-                          <div className="flex items-center gap-4">
-                            <img
-                              src={GOH_2026.photoUrl}
-                              alt={isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
-                              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-brand-blue/40 shadow-sm shrink-0"
-                            />
-                            <div className="space-y-1">
-                              <div className="flex flex-wrap items-center gap-2">
-                                <span className="text-sm sm:text-base font-bold text-brand-navy">
-                                  {isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
-                                </span>
-                                <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
-                                  {isEn ? 'Guest of Honour' : '主礼嘉宾'}
-                                </span>
+                      {/* Session 1 Fireside Chat Lineup */}
+                      {item.sessionNumber === 1 && (
+                        <div className="space-y-3 pt-1">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {/* Confirmed Speaker: SMS Desmond Tan Kok Ming */}
+                            <div
+                              onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'desmond-tan') || null)}
+                              className="bg-white rounded-xl border border-blue-200/80 p-3.5 sm:p-4 flex items-center gap-3.5 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                            >
+                              <img
+                                src={GOH_2026.photoUrl}
+                                alt={isEn ? GOH_2026.nameEn : GOH_2026.nameZh}
+                                className="w-14 h-14 rounded-full object-cover border-2 border-brand-blue/40 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                              />
+                              <div className="min-w-0">
+                                <div className="flex flex-wrap items-center gap-1.5">
+                                  <span className="text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                    {isEn ? 'SMS Desmond Tan Kok Ming' : '陈国明先生'}
+                                  </span>
+                                  <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
+                                    {isEn ? 'Speaker' : '演讲嘉宾'}
+                                  </span>
+                                </div>
+                                <p className="text-xs text-slate-500 font-medium truncate mt-0.5">
+                                  {isEn ? 'Senior Minister of State' : '高级政务部长'}
+                                </p>
                               </div>
-                              <p className="text-xs sm:text-[13px] text-slate-600 leading-snug">
-                                {isEn ? GOH_2026.postEn : GOH_2026.postZh}
-                              </p>
+                            </div>
+
+                            {/* Confirmed Moderator: Tan Wei Wei Celeste */}
+                            <div
+                              onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'celeste-tan') || null)}
+                              className="bg-white rounded-xl border border-blue-200/80 p-3.5 sm:p-4 flex items-center gap-3.5 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                            >
+                              <img
+                                src="/speakers/celeste-tan.jpg"
+                                alt={isEn ? 'Tan Wei Wei Celeste' : '陈薇薇'}
+                                className="w-14 h-14 rounded-full object-cover border-2 border-brand-blue/40 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                              />
+                              <div className="min-w-0">
+                                <div className="flex flex-wrap items-center gap-1.5">
+                                  <span className="text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                    {isEn ? 'Tan Wei Wei Celeste' : '陈薇薇'}
+                                  </span>
+                                  <span className="text-[10px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
+                                    {isEn ? 'Moderator' : '主持人'}
+                                  </span>
+                                </div>
+                                <p className="text-xs text-slate-500 font-medium truncate mt-0.5">
+                                  {isEn ? 'Enterprise Singapore' : '新加坡企业发展局'}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Session 2 Panel Lineup (Future Media / Health / Connectivity) */}
+                      {item.sessionNumber === 2 && (
+                        <div className="space-y-3 pt-1">
+                          {/* Moderator */}
+                          <div className="space-y-1.5">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                              {isEn ? 'Moderator' : '主持人'}
+                            </span>
+                            <div
+                              onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'howie-lau') || null)}
+                              className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group max-w-md"
+                            >
+                              <img
+                                src="/speakers/howie-lau.jpg"
+                                alt="Howie Lau How Sin"
+                                className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                              />
+                              <div className="min-w-0">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                    {isEn ? 'Howie Lau How Sin' : '刘浩新'}
+                                  </span>
+                                  <span className="text-[9px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full">
+                                    {isEn ? 'Moderator' : '主持人'}
+                                  </span>
+                                </div>
+                                <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                  {isEn ? 'Technology Leader' : '科技行业领袖'}
+                                </p>
+                              </div>
                             </div>
                           </div>
 
-                          <div className="sm:border-l sm:border-slate-100 sm:pl-5 shrink-0">
-                            <span className="text-[10px] font-mono text-slate-400 block mb-1">
-                              {isEn ? 'Moderator' : '主持人'}
-                            </span>
-                            <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
+                          {/* Panelists */}
+                          <div className="space-y-1.5">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                                {isEn ? 'Panelists (at least 2 more speakers TBC)' : '研讨嘉宾（至少2名嘉宾待定）'}
+                              </span>
+                              <span className="text-[10px] font-mono text-brand-blue bg-blue-50 px-2 py-0.5 rounded-full">
+                                {t.panelPendingNote}
+                              </span>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                              {/* Confirmed Panelist: Zhang Tianyi */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'zhang-tianyi') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <img
+                                  src="/speakers/zhang-tianyi.jpg"
+                                  alt="Zhang Tianyi"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Zhang Tianyi' : '张天翊'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    PuzzleLogic
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Confirmed Panelist: Glex Low */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'glex-low') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
+                                  GL
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      Glex Low
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    Storyworld.AI
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Pending Panelist 1 */}
+                              <SpeakerChipSkeleton label={isEn ? 'Panelist 3 (TBC)' : '研讨嘉宾 3（待定）'} />
+
+                              {/* Pending Panelist 2 */}
+                              <SpeakerChipSkeleton label={isEn ? 'Panelist 4 (TBC)' : '研讨嘉宾 4（待定）'} />
+                            </div>
                           </div>
                         </div>
-                      ) : (
-                        /* Other Sessions with Speakers/Moderators Pending */
-                        <div className="space-y-1.5 pt-1">
-                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                            {isEn ? 'Panelists & Speakers (Pending Final Confirmation)' : '演讲与研讨嘉宾（待最终确认）'}
-                          </span>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
-                            <SpeakerChipSkeleton label={t.agendaSpeakerChipPending} />
+                      )}
+
+                      {/* Session 3 Debate Lineup (AI & Workforce Inequalities) */}
+                      {item.sessionNumber === 3 && (
+                        <div className="space-y-3 pt-1">
+                          {/* Moderator Pending */}
+                          <div className="space-y-1.5">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                              {isEn ? 'Debate Moderator' : '辩论主持人'}
+                            </span>
+                            <div className="max-w-md">
+                              <SpeakerChipSkeleton label={isEn ? 'Debate Moderator (TBC - In Discussion)' : '辩论主持人（商讨中待定）'} />
+                            </div>
+                          </div>
+
+                          {/* Debaters */}
+                          <div className="space-y-1.5">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                                {isEn ? 'Debaters (2 more speakers TBC)' : '辩论嘉宾（2名嘉宾待定）'}
+                              </span>
+                              <span className="text-[10px] font-mono text-brand-blue bg-blue-50 px-2 py-0.5 rounded-full">
+                                {t.debatePendingNote}
+                              </span>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                              {/* Confirmed Debater: Prof. Adam Chee */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'adam-chee') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <img
+                                  src="/speakers/adam-chee.jpg"
+                                  alt="Prof. Adam Chee"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Prof. Adam Chee' : '齐亚当教授'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'Singapore General Hospital' : '新加坡中央医院'}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Confirmed Debater: Yiyang He */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'he-yiyang') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <img
+                                  src="/speakers/he-yiyang.jpg"
+                                  alt="Yiyang He"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Yiyang He' : '何依洋'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'National University of Singapore' : '新加坡国立大学'}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Confirmed Debater: Yi KaiZhi */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'yi-kaizhi') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <img
+                                  src="/speakers/yi-kaizhi.jpg"
+                                  alt="Yi KaiZhi"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Yi KaiZhi' : '易凯智'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'SagePaths Group' : '联智教育集团'}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Pending Debater 1 */}
+                              <SpeakerChipSkeleton label={isEn ? 'Debater 4 (TBC)' : '辩论嘉宾 4（待定）'} />
+
+                              {/* Pending Debater 2 */}
+                              <SpeakerChipSkeleton label={isEn ? 'Debater 5 (TBC)' : '辩论嘉宾 5（待定）'} />
+                            </div>
                           </div>
                         </div>
                       )}
@@ -293,6 +505,95 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
         </motion.p>
 
       </div>
+
+      {/* Speaker Bio Modal */}
+      <AnimatePresence>
+        {selectedBioSpeaker && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedBioSpeaker(null)}
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm cursor-pointer"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              transition={{ type: 'spring', duration: 0.35 }}
+              className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden z-10 max-h-[85vh] flex flex-col"
+            >
+              <div className="bg-[#1A264F] text-white px-6 py-5 flex items-center justify-between shrink-0">
+                <div className="flex items-center space-x-3.5">
+                  {selectedBioSpeaker.photoUrl ? (
+                    <img
+                      src={selectedBioSpeaker.photoUrl}
+                      alt={isEn ? selectedBioSpeaker.name : selectedBioSpeaker.nameZh}
+                      className="w-12 h-12 rounded-full object-cover object-top border-2 border-white/50 shadow-sm shrink-0"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-blue-100 text-brand-navy border-2 border-white/50 flex items-center justify-center font-bold text-sm shrink-0">
+                      {selectedBioSpeaker.name.split(' ').map((n) => n[0]).slice(0, 2).join('')}
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="text-base sm:text-lg font-display font-bold">
+                      {isEn ? selectedBioSpeaker.name : selectedBioSpeaker.nameZh}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-1.5 mt-0.5">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-200 bg-white/10 px-2 py-0.5 rounded-full">
+                        {isEn ? selectedBioSpeaker.sessionTagEn : selectedBioSpeaker.sessionTagZh}
+                      </span>
+                      {selectedBioSpeaker.isModerator && (
+                        <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-300 bg-white/10 px-2 py-0.5 rounded-full">
+                          {isEn ? 'Moderator' : '主持人'}
+                        </span>
+                      )}
+                    </div>
+                    {selectedBioSpeaker.organizationEn && (
+                      <p className="text-xs text-blue-200/90 mt-0.5 line-clamp-1">
+                        {isEn ? selectedBioSpeaker.organizationEn : selectedBioSpeaker.organizationZh}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedBioSpeaker(null)}
+                  className="text-slate-300 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10 cursor-pointer"
+                  aria-label="Close bio modal"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="p-6 sm:p-8 space-y-4 overflow-y-auto text-xs sm:text-sm text-slate-700 leading-relaxed">
+                {(isEn ? selectedBioSpeaker.bioEn : selectedBioSpeaker.bioZh) ? (
+                  (isEn ? selectedBioSpeaker.bioEn : selectedBioSpeaker.bioZh)!
+                    .split('\n\n')
+                    .map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))
+                ) : (
+                  <p className="text-slate-500 italic">
+                    {t.bioComingSoon}
+                  </p>
+                )}
+              </div>
+
+              <div className="bg-slate-50 px-6 py-3 border-t border-slate-200 flex justify-end shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setSelectedBioSpeaker(null)}
+                  className="px-4 py-2 bg-[#1A264F] hover:bg-brand-blue text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+                >
+                  {t.closeBio}
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
