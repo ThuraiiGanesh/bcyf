@@ -326,7 +326,7 @@ export const SPEAKERS_2026: Speaker[] = [
   {
     id: 'celeste-tan',
     name: 'Tan Wei Wei Celeste',
-    nameZh: '陈薇薇 (Tan Wei Wei Celeste)',
+    nameZh: '陈纬玮',
     sessionTagEn: 'Fireside Chat',
     sessionTagZh: '炉边对话',
     roleTagEn: 'Moderator',
@@ -336,7 +336,7 @@ export const SPEAKERS_2026: Speaker[] = [
     organizationZh: '新加坡企业发展局',
     photoUrl: '/speakers/celeste-tan.jpg',
     bioEn: 'Celeste is with Enterprise Singapore, where she works on initiatives that help businesses build quality and trust, enabling them to strengthen their competitiveness and access international markets. She holds a Bachelor of Social Sciences in Economics, Public Policy & Global Affairs from Nanyang Technological University.\n\nOutside work, Celeste is actively involved in youth and community development. She is passionate about bringing people and ideas together, and enjoys creating conversations that encourage different perspectives and explore how we can shape the future together.',
-    bioZh: '陈薇薇就职于新加坡企业发展局（Enterprise Singapore），致力于协助企业建立质量与信任标准，增强核心竞争力并拓展国际市场。她拥有南洋理工大学经济学、公共政策与全球事务社会科学学士学位。\n\n工作之余，薇薇积极参与青年与社区发展项目。她热衷于将多元人群与创新想法连接起来，乐于促进跨视角对话，共同探索如何携手塑造未来。'
+    bioZh: '陈纬玮就职于新加坡企业发展局（Enterprise Singapore），致力于协助企业建立质量与信任标准，增强核心竞争力并拓展国际市场。她拥有南洋理工大学经济学、公共政策与全球事务社会科学学士学位。\n\n工作之余，纬玮积极参与青年与社区发展项目。她热衷于将多元人群与创新想法连接起来，乐于促进跨视角对话，共同探索如何携手塑造未来。'
   },
   {
     id: 'zhang-tianyi',
@@ -351,7 +351,7 @@ export const SPEAKERS_2026: Speaker[] = [
     organizationZh: 'PuzzleLogic',
     photoUrl: '/speakers/zhang-tianyi.jpg',
     bioEn: 'Zhang Tianyi is the Co-Founder of PuzzleLogic. He completed his undergraduate studies at Beihang University, earned a Master\'s degree from Nanyang Technological University (NTU), and is currently pursuing his Ph.D. at the National University of Singapore (NUS). He previously served at the Agency for Science, Technology and Research (A*STAR) Singapore. He has published over 30 papers in the field of AI medical imaging in prestigious journals and conferences including IEEE TNNLS, IEEE TMI, MIA, and MICCAI.',
-    bioZh: '张天翊是PuzzleLogic的联合创始人，北航本科，新加坡南洋理工大学硕士，目前在新国立读博。他此前在新加坡科技局（ASTAR）任职，在AI医学图像领域有30多篇论文，发表在著名ai医学图像的期刊和会议如IEEE TNNLS，IEEE TMI，MIA，MICCAI等。'
+    bioZh: '张天翊是 PuzzleLogic 的联合创始人，本科毕业于北京航空航天大学，硕士毕业于新加坡南洋理工大学，目前在新加坡国立大学攻读博士。他此前曾任职于新加坡科技研究局（A*STAR），在 AI 医学图像领域发表了 30 多篇论文，研究成果见于 IEEE TNNLS、IEEE TMI、Medical Image Analysis (MIA)、MICCAI 等著名期刊和会议。'
   },
   {
     id: 'glex-low',
@@ -362,16 +362,16 @@ export const SPEAKERS_2026: Speaker[] = [
     roleTagEn: 'Speaker',
     roleTagZh: '演讲嘉宾',
     isModerator: false,
-    organizationEn: 'Storyworld.AI',
-    organizationZh: 'Storyworld.AI',
+    organizationEn: 'Founder, Storyworld.AI',
+    organizationZh: 'Storyworld.AI 创始人',
     photoUrl: '',
-    bioEn: 'Glex Low is representing Storyworld.AI. Full biography will be announced soon.',
-    bioZh: 'Glex Low 代表 Storyworld.AI 出席分论坛。详细个人履历即将公布。'
+    bioEn: 'Founder, Storyworld.AI. Full biography will be announced soon.',
+    bioZh: 'Storyworld.AI 创始人。详细个人履历即将公布。'
   },
   {
     id: 'howie-lau',
     name: 'Howie Lau How Sin',
-    nameZh: '刘浩新 (Howie Lau How Sin)',
+    nameZh: '刘浩新',
     sessionTagEn: 'Panel',
     sessionTagZh: '分论坛',
     roleTagEn: 'Moderator',
@@ -386,7 +386,7 @@ export const SPEAKERS_2026: Speaker[] = [
   {
     id: 'adam-chee',
     name: 'Prof. Adam Chee',
-    nameZh: '齐亚当教授 (Prof. Adam Chee)',
+    nameZh: '徐伟翔教授',
     sessionTagEn: 'Debate',
     sessionTagZh: '大辩论',
     roleTagEn: 'Speaker',
@@ -396,12 +396,12 @@ export const SPEAKERS_2026: Speaker[] = [
     organizationZh: '新加坡中央医院',
     photoUrl: '/speakers/adam-chee.jpg',
     bioEn: 'A/Prof. Adam CHEE is a digital health and health informatics leader, currently serving as Director of the AI Office at Singapore General Hospital.\n\nHe brings deep expertise across healthcare, technology, innovation, and business transformation, with experience spanning clinical information systems, strategic consulting, standards development, AI-enabled health, and health systems transformation.\n\nAdam has worked across Asia Pacific and the Middle East, supporting the adoption of evidence-based, technology-enabled healthcare solutions.\n\nHe also serves in multiple regional and international leadership roles, including HL7 Singapore, HL7 Asia, ISO TC215, WHO, APEC, and universities in the region.',
-    bioZh: '齐亚当副教授是数字健康与健康信息学领域的知名领袖，现任新加坡中央医院（SGH）人工智能办公室主任。\n\n他在医疗健康、科技、创新及商业转型领域拥有深厚积淀，经验涵盖临床信息系统、战略咨询、标准制定、AI智慧医疗以及健康体系变革。\n\n齐亚当曾参与亚太与中东地区多个项目，推动循证及科技赋能的医疗解决方案落地。他还在HL7新加坡、HL7亚洲、ISO TC215、世卫组织（WHO）、亚太经合组织（APEC）及区域内多所知名高校担任重要领导职务。'
+    bioZh: '徐伟翔副教授是数字健康与健康信息学领域的知名领袖，现任新加坡中央医院（SGH）人工智能办公室主任。\n\n他在医疗健康、科技、创新及商业转型领域拥有深厚积淀，经验涵盖临床信息系统、战略咨询、标准制定、AI智慧医疗以及健康体系变革。\n\n徐伟翔曾参与亚太与中东地区多个项目，推动循证及科技赋能的医疗解决方案落地。他还在HL7新加坡、HL7亚洲、ISO TC215、世卫组织（WHO）、亚太经合组织（APEC）及区域内多所知名高校担任重要领导职务。'
   },
   {
     id: 'he-yiyang',
     name: 'Yiyang He',
-    nameZh: '何依洋 (Yiyang He)',
+    nameZh: '何一阳',
     sessionTagEn: 'Debate',
     sessionTagZh: '大辩论',
     roleTagEn: 'Speaker',
@@ -411,12 +411,12 @@ export const SPEAKERS_2026: Speaker[] = [
     organizationZh: '新加坡国立大学',
     photoUrl: '/speakers/he-yiyang.jpg',
     bioEn: 'He Yiyang is an undergraduate at the National University of Singapore studying Sociology and Political Science, and is part of the honours programme at NUS College. His research focuses on how technological change is reshaping education and work.\n\nHe has studied how universities are responding to generative AI, particularly its effects on teaching and assessment, as well as how AI may change occupations, job tasks and the skills workers need. He is also interested in who benefits from these changes, especially how unequal access to AI tools and training may produce very different outcomes across groups. His wider research also looks at flexible work, overwork and workplace practices, which has led to a broader interest in how institutions shape people\'s experiences of work. More recently, he has also been exploring the environmental side of AI, including data-centre growth, energy demand, sustainability and questions of a just transition. Outside research, Yiyang has worked in people consulting, strategic planning and strategic communications across the public and private sectors. He previously served as President of the NUS College Club, representing more than 1,500 students.',
-    bioZh: '何依洋是新加坡国立大学社会学与政治学本科生，也是国大荣誉学院（NUS College）成员。他的研究聚焦科技变革如何重塑教育与工作范式。\n\n他深入探讨了大学对生成式AI的应对机制，特别是其对教学与评估的影响，以及AI对未来职业结构、技能需求和工作任务的深远重构。他关注技术红利的分配公平性，探讨AI工具与培训获取不平等带来的影响。\n\n其研究领域还延伸至灵活工时、过度工作与职场文化，并拓展至AI的环境议题，包括数据中心增长、能源消耗、可持续性与公正转型。在学术研究之外，依洋曾在公共与私营部门从事人力咨询、战略规划及品牌传播工作，并曾担任拥有1500多名学生的国大学院俱乐部主席。'
+    bioZh: '何一阳是新加坡国立大学社会学与政治学本科生，也是国大荣誉学院（NUS College）成员。他的研究聚焦科技变革如何重塑教育与工作范式。\n\n他深入探讨了大学对生成式AI的应对机制，特别是其对教学与评估的影响，以及AI对未来职业结构、技能需求和工作任务的深远重构。他关注技术红利的分配公平性，探讨AI工具与培训获取不平等带来的影响。\n\n其研究领域还延伸至灵活工时、过度工作与职场文化，并拓展至AI的环境议题，包括数据中心增长、能源消耗、可持续性与公正转型。在学术研究之外，一阳曾在公共与私营部门从事人力咨询、战略规划及品牌传播工作，并曾担任拥有1500多名学生的国大学院俱乐部主席。'
   },
   {
     id: 'yi-kaizhi',
     name: 'Yi KaiZhi',
-    nameZh: '易凯智 (Yi KaiZhi)',
+    nameZh: '蚁凯致',
     sessionTagEn: 'Debate',
     sessionTagZh: '大辩论',
     roleTagEn: 'Speaker',
@@ -425,8 +425,8 @@ export const SPEAKERS_2026: Speaker[] = [
     organizationEn: 'SagePaths Group',
     organizationZh: '联智教育集团',
     photoUrl: '/speakers/yi-kaizhi.jpg',
-    bioEn: 'Raised in Singapore\'s school system, with a decade in education: tutoring at 16, founded a study-abroad agency at 20. Today I\'m a Partner at SagePaths Group, an education services group operating in Singapore since 2006, where I lead SagePaths Global Education, helping families plan their path from school selection to university.',
-    bioZh: '在新加坡教育体系中成长，深耕教育领域十载：16岁开启家教生涯，20岁创立留学服务机构。现任联智集团（SagePaths Group，创立于2006年的新加坡专业教育服务集团）合伙人，负责联智国际教育业务，致力于为家庭提供从择校规划到大学录取的全方位路径指导。'
+    bioEn: 'An education entrepreneur raised in Singapore’s school system. Today I’m a Partner at SagePaths Group, a one-stop education platform serving families in Singapore since 2006 serving more than 10,000 families in Singapore, covering school selection, tutoring, university applications, student housing, study tours and family relocation. I lead SagePaths Global Education, helping families plan every step from their first school in Singapore to university and beyond.',
+    bioZh: '在新加坡教育体系中成长的一名教育创业者。现任联智教育集团（SagePaths Group）合伙人。联智作为一站式教育平台，自2006年起扎根新加坡，已累计服务超过10,000个家庭，业务涵盖择校规划、课后辅导、大学升学、学生公寓、研学游学及家庭移居等。目前我负责联智国际教育（SagePaths Global Education），致力于协助家庭规划从新加坡入学到大学及未来的每一步关键旅程。'
   }
 ];
 
@@ -571,8 +571,8 @@ export const TRANSLATIONS = {
     speakersSubtitle: 'Distinguished speakers, panelists, and moderators at BCYF 2026.',
     speakersClickHint: 'Click on any speaker to view their biography',
     clickToReadBio: 'Read Bio',
-    panelPendingNote: 'At least 2 more speakers TBC',
-    debatePendingNote: '2 more speakers TBC',
+    panelPendingNote: '1 more speaker TBC',
+    debatePendingNote: '1 more speaker TBC',
     debateModeratorPendingNote: 'Moderator (TBC)',
     speakerPendingChip: 'Speaker (TBC)',
     moderatorTag: 'Moderator',
@@ -644,8 +644,8 @@ export const TRANSLATIONS = {
     speakersSubtitle: '2026年通商中国青年论坛特邀嘉宾、研讨嘉宾与主持人阵容。',
     speakersClickHint: '点击卡片查看嘉宾完整履历',
     clickToReadBio: '查看完整履历',
-    panelPendingNote: '至少2名演讲嘉宾待定',
-    debatePendingNote: '2名辩论嘉宾待定',
+    panelPendingNote: '1名研讨嘉宾待定',
+    debatePendingNote: '1名辩论嘉宾待定',
     debateModeratorPendingNote: '辩论主持人（待定）',
     speakerPendingChip: '嘉宾（待定）',
     moderatorTag: '主持人',

@@ -242,13 +242,13 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                             >
                               <img
                                 src="/speakers/celeste-tan.jpg"
-                                alt={isEn ? 'Tan Wei Wei Celeste' : '陈薇薇'}
+                                alt={isEn ? 'Tan Wei Wei Celeste' : '陈纬玮'}
                                 className="w-14 h-14 rounded-full object-cover border-2 border-brand-blue/40 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
                               />
                               <div className="min-w-0">
                                 <div className="flex flex-wrap items-center gap-1.5">
                                   <span className="text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                    {isEn ? 'Tan Wei Wei Celeste' : '陈薇薇'}
+                                    {isEn ? 'Tan Wei Wei Celeste' : '陈纬玮'}
                                   </span>
                                   <span className="text-[10px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
                                     {isEn ? 'Moderator' : '主持人'}
@@ -300,7 +300,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                           <div className="space-y-1.5">
                             <div className="flex items-center justify-between">
                               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                                {isEn ? 'Panelists (at least 2 more speakers TBC)' : '研讨嘉宾（至少2名嘉宾待定）'}
+                                {isEn ? 'Panelists (1 more speaker TBC)' : '研讨嘉宾（1名嘉宾待定）'}
                               </span>
                               <span className="text-[10px] font-mono text-brand-blue bg-blue-50 px-2 py-0.5 rounded-full">
                                 {t.panelPendingNote}
@@ -345,16 +345,13 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
-                                    Storyworld.AI
+                                    {isEn ? 'Founder, Storyworld.AI' : 'Storyworld.AI 创始人'}
                                   </p>
                                 </div>
                               </div>
 
-                              {/* Pending Panelist 1 */}
+                              {/* Pending Panelist */}
                               <SpeakerChipSkeleton label={isEn ? 'Panelist 3 (TBC)' : '研讨嘉宾 3（待定）'} />
-
-                              {/* Pending Panelist 2 */}
-                              <SpeakerChipSkeleton label={isEn ? 'Panelist 4 (TBC)' : '研讨嘉宾 4（待定）'} />
                             </div>
                           </div>
                         </div>
@@ -377,7 +374,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                           <div className="space-y-1.5">
                             <div className="flex items-center justify-between">
                               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                                {isEn ? 'Debaters (2 more speakers TBC)' : '辩论嘉宾（2名嘉宾待定）'}
+                                {isEn ? 'Debaters (1 more speaker TBC)' : '辩论嘉宾（1名嘉宾待定）'}
                               </span>
                               <span className="text-[10px] font-mono text-brand-blue bg-blue-50 px-2 py-0.5 rounded-full">
                                 {t.debatePendingNote}
@@ -398,7 +395,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Prof. Adam Chee' : '齐亚当教授'}
+                                      {isEn ? 'Prof. Adam Chee' : '徐伟翔教授'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
@@ -420,7 +417,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Yiyang He' : '何依洋'}
+                                      {isEn ? 'Yiyang He' : '何一阳'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
@@ -442,7 +439,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Yi KaiZhi' : '易凯智'}
+                                      {isEn ? 'Yi KaiZhi' : '蚁凯致'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
@@ -451,11 +448,8 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* Pending Debater 1 */}
+                              {/* Pending Debater */}
                               <SpeakerChipSkeleton label={isEn ? 'Debater 4 (TBC)' : '辩论嘉宾 4（待定）'} />
-
-                              {/* Pending Debater 2 */}
-                              <SpeakerChipSkeleton label={isEn ? 'Debater 5 (TBC)' : '辩论嘉宾 5（待定）'} />
                             </div>
                           </div>
                         </div>
