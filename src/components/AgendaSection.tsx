@@ -298,14 +298,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
 
                           {/* Panelists */}
                           <div className="space-y-1.5">
-                            <div className="flex items-center justify-between">
-                              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                                {isEn ? 'Panelists (1 more speaker TBC)' : '研讨嘉宾（1名嘉宾待定）'}
-                              </span>
-                              <span className="text-[10px] font-mono text-brand-blue bg-blue-50 px-2 py-0.5 rounded-full">
-                                {t.panelPendingNote}
-                              </span>
-                            </div>
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                              {isEn ? 'Panelists' : '研讨嘉宾'}
+                            </span>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                               {/* Confirmed Panelist: Zhang Tianyi */}
@@ -350,8 +345,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* Pending Panelist */}
+                              {/* Pending Panelists */}
                               <SpeakerChipSkeleton label={isEn ? 'Panelist 3 (TBC)' : '研讨嘉宾 3（待定）'} />
+                              <SpeakerChipSkeleton label={isEn ? 'Panelist 4 (TBC)' : '研讨嘉宾 4（待定）'} />
                             </div>
                           </div>
                         </div>
@@ -372,14 +368,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
 
                           {/* Debaters */}
                           <div className="space-y-1.5">
-                            <div className="flex items-center justify-between">
-                              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                                {isEn ? 'Debaters (1 more speaker TBC)' : '辩论嘉宾（1名嘉宾待定）'}
-                              </span>
-                              <span className="text-[10px] font-mono text-brand-blue bg-blue-50 px-2 py-0.5 rounded-full">
-                                {t.debatePendingNote}
-                              </span>
-                            </div>
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                              {isEn ? 'Debaters' : '辩论嘉宾'}
+                            </span>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                               {/* Confirmed Debater: Prof. Adam Chee */}
@@ -448,8 +439,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* Pending Debater */}
+                              {/* Pending Debaters */}
                               <SpeakerChipSkeleton label={isEn ? 'Debater 4 (TBC)' : '辩论嘉宾 4（待定）'} />
+                              <SpeakerChipSkeleton label={isEn ? 'Debater 5 (TBC)' : '辩论嘉宾 5（待定）'} />
                             </div>
                           </div>
                         </div>
