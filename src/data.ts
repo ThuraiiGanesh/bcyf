@@ -39,7 +39,7 @@ export const FORUM_THEME_2026 = {
 
 export const GOH_2026: GOHPerson = {
   nameEn: 'Mr Desmond Tan Kok Ming',
-  nameZh: '陈国明先生',
+  nameZh: '陈国明',
   postEn: "Senior Minister of State, Prime Minister's Office; Deputy Secretary-General, NTUC",
   postZh: '总理公署高级政务部长；全国职工总会副秘书长',
   mpEn: 'MP for Pasir Ris-Changi GRC (Pasir Ris Central)',
@@ -217,7 +217,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
     descriptionEn: 'Technological disruption, demographic changes, and deeper regional connectivity are reshaping the way work is defined across Asia. For young individuals, this equates to entering a landscape where jobs are rapidly being redesigned. This fireside chat with SMS Desmond Tan will explore what this changing environment means for the next generation, and what questions young people should be asking as they prepare for the future.',
     descriptionZh: '本区域内的工作范式正深受技术变革、人口结构变化及区域互联互通深化等因素的影响而持续重塑。本次与总理公署高级政务部长陈国明先生的炉边对话，将聚焦这一变动环境对下一代所带来的启示，并探讨青年在面向未来时应提出哪些关键问题。',
     speakerEn: 'SMS Desmond Tan Kok Ming',
-    speakerZh: '陈国明先生',
+    speakerZh: '陈国明',
     speakerRoleEn: 'Guest of Honour & Fireside Chat Speaker',
     speakerRoleZh: '主礼嘉宾兼炉边对话演讲嘉宾',
     speakerPhoto: '/desmond-tan-headshot.jpg',
@@ -332,10 +332,10 @@ export const SPEAKERS_2026: Speaker[] = [
     roleTagEn: 'Moderator',
     roleTagZh: '主持人',
     isModerator: true,
-    organizationEn: 'Enterprise Singapore',
-    organizationZh: '新加坡企业发展局',
+    organizationEn: 'Member of BCYC',
+    organizationZh: '通商中国青年连线成员',
     photoUrl: '/speakers/celeste-tan.jpg',
-    bioEn: 'Celeste is with Enterprise Singapore, where she works on initiatives that help businesses build quality and trust, enabling them to strengthen their competitiveness and access international markets. She holds a Bachelor of Social Sciences in Economics, Public Policy & Global Affairs from Nanyang Technological University.\n\nOutside work, Celeste is actively involved in youth and community development. She is passionate about bringing people and ideas together, and enjoys creating conversations that encourage different perspectives and explore how we can shape the future together.',
+    bioEn: 'Celeste works with Enterprise Singapore, where she works on initiatives that help businesses build quality and trust, enabling them to strengthen their competitiveness and access international markets. She holds a Bachelor of Social Sciences in Economics, Public Policy & Global Affairs from Nanyang Technological University.\n\nOutside of work, Celeste is actively involved in youth and community development. She is passionate about bringing people and ideas together, and enjoys creating conversations that encourage different perspectives and explore how we can shape the future together.',
     bioZh: '陈纬玮就职于新加坡企业发展局（Enterprise Singapore），致力于协助企业建立质量与信任标准，增强核心竞争力并拓展国际市场。她拥有南洋理工大学经济学、公共政策与全球事务社会科学学士学位。\n\n工作之余，纬玮积极参与青年与社区发展项目。她热衷于将多元人群与创新想法连接起来，乐于促进跨视角对话，共同探索如何携手塑造未来。'
   },
   {
@@ -347,11 +347,26 @@ export const SPEAKERS_2026: Speaker[] = [
     roleTagEn: 'Speaker',
     roleTagZh: '演讲嘉宾',
     isModerator: false,
-    organizationEn: 'PuzzleLogic',
-    organizationZh: 'PuzzleLogic',
+    organizationEn: 'CTO, PuzzleLogic',
+    organizationZh: 'PuzzleLogic 首席技术官',
     photoUrl: '/speakers/zhang-tianyi.jpg',
     bioEn: 'Zhang Tianyi is the Co-Founder of PuzzleLogic. He completed his undergraduate studies at Beihang University, earned a Master\'s degree from Nanyang Technological University (NTU), and is currently pursuing his Ph.D. at the National University of Singapore (NUS). He previously served at the Agency for Science, Technology and Research (A*STAR) Singapore. He has published over 30 papers in the field of AI medical imaging in prestigious journals and conferences including IEEE TNNLS, IEEE TMI, MIA, and MICCAI.',
     bioZh: '张天翊是 PuzzleLogic 的联合创始人，本科毕业于北京航空航天大学，硕士毕业于新加坡南洋理工大学，目前在新加坡国立大学攻读博士。他此前曾任职于新加坡科技研究局（A*STAR），在 AI 医学图像领域发表了 30 多篇论文，研究成果见于 IEEE TNNLS、IEEE TMI、Medical Image Analysis (MIA)、MICCAI 等著名期刊和会议。'
+  },
+  {
+    id: 'cai-chenhui',
+    name: 'Cai Chenhui',
+    nameZh: '蔡琛辉',
+    sessionTagEn: 'Panel',
+    sessionTagZh: '分论坛',
+    roleTagEn: 'Speaker',
+    roleTagZh: '演讲嘉宾',
+    isModerator: false,
+    organizationEn: 'COO & Co-founder, LAPIS Innovations Pte. Ltd.',
+    organizationZh: 'LAPIS Innovations Pte. Ltd. 首席运营官兼联合创始人',
+    photoUrl: '',
+    bioEn: 'An emerging leader in deep-tech hardware innovation with a decade of R&D experience spanning intelligent robotics, advanced manufacturing equipment, and mechatronic systems. Currently serving as the COO and Co-founder of LAPIS Innovations Pte. Ltd., Mr. Cai drives the development of next-generation powder-free metal additive manufacturing technology. This leadership encompasses the entire product lifecycle, from conceptual design and hardware/software development to prototype iteration and supply chain establishment.\n\nPreviously, Mr. Cai held core R&D and team leadership roles across prestigious institutions, including the Nanyang Technological University (NTU) Robotics Research Centre, the Advanced Materials Design and Synthesis Laboratory, and the Hyundai-NTU-A*STAR Corporate Lab. Specialising in product definition, technical solution design, and prototype execution, Mr. Cai possesses a hybrid capability to bridge academic research with industrial demand, successfully translating cutting-edge technologies into practical, real-world solutions. Deeply committed to original technology accumulation and intellectual property protection, the portfolio includes 11 patents as the first applicant and five technical disclosures as the first inventor.',
+    bioZh: '深科技硬件创新领域的新锐领袖，在智能机器人、先进制造装备及机电系统研发方面拥有十年深厚经验。现任 LAPIS Innovations Pte. Ltd. 首席运营官兼联合创始人，主导新一代无粉末金属增材制造技术的研发与落地。其领导力贯穿完整的产品全生命周期，从概念设计、软硬件开发，到原型迭代及供应链体系搭建。\n\n此前，蔡先生曾在南洋理工大学（NTU）机器人研究中心、先进材料设计与合成实验室，以及现代汽车-南大-新加坡科技研究局企业联合实验室等顶尖科研机构担任核心研发及团队领导职务。他精于产品定义、技术方案设计及原型落地，兼具连接学术前沿与产业实际需求的复合能力，成功将尖端科技转化为务实可行的现实解决方案。他始终致力于原创技术的积累与知识产权保护，作为第一申请人拥有11项专利，并作为第一发明人拥有5项技术交底。'
   },
   {
     id: 'glex-low',
@@ -588,6 +603,7 @@ export const TRANSLATIONS = {
     agendaTimingPending: 'Timing TBC',
     agendaSpeakerChipPending: 'Speaker / Moderator (TBC)',
     agendaFootnote: '*Programme subjected to changes.',
+    sustainabilityNote: 'We are going sustainable today! Please bring along a water bottle. Thank you for your kind support!',
     galleryShowcaseTag: 'Exhibition Area',
 
     watchBadge: 'WATCH',
@@ -661,6 +677,7 @@ export const TRANSLATIONS = {
     agendaTimingPending: '时间待定',
     agendaSpeakerChipPending: '嘉宾 / 主持人（待定）',
     agendaFootnote: '*议程可能变动，以现场实际安排为准。',
+    sustainabilityNote: '我们正在践行绿色环保理念！现场不提供瓶装水，请自备水壶。感谢您的支持与理解！',
     galleryShowcaseTag: '互动展区',
 
     watchBadge: '精彩回顾',

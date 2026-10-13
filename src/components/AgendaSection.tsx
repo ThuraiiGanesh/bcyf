@@ -212,7 +212,21 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {/* Confirmed Speaker: SMS Desmond Tan Kok Ming */}
                             <div
-                              onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'desmond-tan') || null)}
+                              onClick={() => setSelectedBioSpeaker({
+                                id: 'desmond-tan',
+                                name: 'SMS Desmond Tan Kok Ming',
+                                nameZh: '陈国明',
+                                sessionTagEn: 'Fireside Chat',
+                                sessionTagZh: '炉边对话',
+                                roleTagEn: 'Speaker',
+                                roleTagZh: '演讲嘉宾',
+                                isModerator: false,
+                                organizationEn: "Senior Minister of State, Prime Minister's Office; Deputy Secretary-General, NTUC",
+                                organizationZh: '总理公署高级政务部长；全国职工总会副秘书长',
+                                photoUrl: GOH_2026.photoUrl,
+                                bioEn: GOH_2026.bioEn,
+                                bioZh: GOH_2026.bioZh,
+                              })}
                               className="bg-white rounded-xl border border-blue-200/80 p-3.5 sm:p-4 flex items-center gap-3.5 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
                             >
                               <img
@@ -223,7 +237,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                               <div className="min-w-0">
                                 <div className="flex flex-wrap items-center gap-1.5">
                                   <span className="text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                    {isEn ? 'SMS Desmond Tan Kok Ming' : '陈国明先生'}
+                                    {isEn ? 'SMS Desmond Tan Kok Ming' : '陈国明'}
                                   </span>
                                   <span className="text-[10px] font-mono font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full">
                                     {isEn ? 'Speaker' : '演讲嘉宾'}
@@ -255,7 +269,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                   </span>
                                 </div>
                                 <p className="text-xs text-slate-500 font-medium truncate mt-0.5">
-                                  {isEn ? 'Enterprise Singapore' : '新加坡企业发展局'}
+                                  {isEn ? 'Member of BCYC' : '通商中国青年连线成员'}
                                 </p>
                               </div>
                             </div>
@@ -320,7 +334,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
-                                    PuzzleLogic
+                                    {isEn ? 'CTO, PuzzleLogic' : 'PuzzleLogic 首席技术官'}
                                   </p>
                                 </div>
                               </div>
@@ -345,8 +359,27 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
+                              {/* Confirmed Panelist: Cai Chenhui */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'cai-chenhui') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
+                                  CC
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Cai Chenhui' : '蔡琛辉'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'COO & Co-founder, LAPIS Innovations' : 'LAPIS Innovations 首席运营官兼联合创始人'}
+                                  </p>
+                                </div>
+                              </div>
+
                               {/* Pending Panelists */}
-                              <SpeakerChipSkeleton label={isEn ? 'Panelist 3 (TBC)' : '研讨嘉宾 3（待定）'} />
                               <SpeakerChipSkeleton label={isEn ? 'Panelist 4 (TBC)' : '研讨嘉宾 4（待定）'} />
                             </div>
                           </div>
@@ -479,16 +512,23 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
           })}
         </div>
 
-        {/* Footnote */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        {/* Sustainability Note & Footnote */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xs text-slate-400 italic text-center font-medium pt-2"
+          className="text-center space-y-2.5 pt-2"
         >
-          {t.agendaFootnote}
-        </motion.p>
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-emerald-800 text-xs sm:text-sm font-medium shadow-2xs">
+            <span className="text-base select-none">🌱</span>
+            <span>{t.sustainabilityNote}</span>
+          </div>
+
+          <p className="text-xs text-slate-400 italic font-medium">
+            {t.agendaFootnote}
+          </p>
+        </motion.div>
 
       </div>
 
