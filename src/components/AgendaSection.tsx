@@ -316,7 +316,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                               {isEn ? 'Panelists' : '研讨嘉宾'}
                             </span>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-2.5">
                               {/* Confirmed Panelist: Zhang Tianyi */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'zhang-tianyi') || null)}
@@ -374,10 +374,13 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
-                                    {isEn ? 'COO & Co-founder, LAPIS Innovations' : 'LAPIS Innovations 首席运营官兼联合创始人'}
+                                    {isEn ? 'COO & Co-founder, LAPIS Innovations Pte. Ltd.' : 'LAPIS Innovations Pte. Ltd. 首席运营官兼联合创始人'}
                                   </p>
                                 </div>
                               </div>
+
+                              {/* Remaining Open Panelist Slot (1 TBC) */}
+                              <SpeakerChipSkeleton label={isEn ? 'Panelist 4 (TBC)' : '研讨嘉宾 4（待定）'} />
                             </div>
                           </div>
                         </div>
@@ -416,13 +419,13 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                             </div>
                           </div>
 
-                          {/* Debaters */}
+                          {/* Debaters (Human Roster Complete) */}
                           <div className="space-y-1.5">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
                               {isEn ? 'Debaters' : '辩论嘉宾'}
                             </span>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                               {/* Confirmed Debater: Prof. Adam Chee */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'adam-chee') || null)}
@@ -488,9 +491,6 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                   </p>
                                 </div>
                               </div>
-
-                              {/* Pending Debater (1 more speaker TBC) */}
-                              <SpeakerChipSkeleton label={isEn ? 'Debater (TBC - In Discussion)' : '辩论嘉宾（商讨中待定）'} />
                             </div>
                           </div>
                         </div>
