@@ -339,9 +339,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* Confirmed Panelist: Glex Low */}
+                              {/* Confirmed Panelist: Glax Low */}
                               <div
-                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'glex-low') || null)}
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'glax-low') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
                               >
                                 <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
@@ -350,7 +350,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      Glex Low
+                                      {isEn ? 'Glax Low' : '刘轩铭'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
@@ -386,13 +386,33 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                       {/* Session 3 Debate Lineup (AI & Workforce Inequalities) */}
                       {item.sessionNumber === 3 && (
                         <div className="space-y-3 pt-1">
-                          {/* Moderator Pending */}
+                          {/* Debate Moderator: Jessica Zhang */}
                           <div className="space-y-1.5">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
                               {isEn ? 'Debate Moderator' : '辩论主持人'}
                             </span>
                             <div className="max-w-md">
-                              <SpeakerChipSkeleton label={isEn ? 'Debate Moderator (TBC - In Discussion)' : '辩论主持人（商讨中待定）'} />
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'jessica-zhang') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
+                                  JZ
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Jessica Zhang' : '张申佳'}
+                                    </span>
+                                    <span className="text-[9px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full">
+                                      {isEn ? 'Moderator' : '主持人'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'Member of BCYC' : '通商中国青年连线成员'}
+                                  </p>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -469,9 +489,8 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* Pending Debaters */}
-                              <SpeakerChipSkeleton label={isEn ? 'Debater 4 (TBC)' : '辩论嘉宾 4（待定）'} />
-                              <SpeakerChipSkeleton label={isEn ? 'Debater 5 (TBC)' : '辩论嘉宾 5（待定）'} />
+                              {/* Pending Debater (1 more speaker TBC) */}
+                              <SpeakerChipSkeleton label={isEn ? 'Debater (TBC - In Discussion)' : '辩论嘉宾（商讨中待定）'} />
                             </div>
                           </div>
                         </div>
