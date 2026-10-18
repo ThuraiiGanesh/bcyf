@@ -344,9 +344,11 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'glax-low') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
                               >
-                                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
-                                  GL
-                                </div>
+                                <img
+                                  src="/speakers/glax-low.jpg"
+                                  alt="Glax Low"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
@@ -364,9 +366,11 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'cai-chenhui') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
                               >
-                                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
-                                  CC
-                                </div>
+                                <img
+                                  src="/speakers/cai-chenhui.jpg"
+                                  alt="Cai Chenhui"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
@@ -399,9 +403,11 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'jessica-zhang') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
                               >
-                                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs shrink-0 group-hover:scale-105 transition-transform">
-                                  JZ
-                                </div>
+                                <img
+                                  src="/speakers/jessica-zhang.jpg"
+                                  alt="Jessica Zhang"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">

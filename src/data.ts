@@ -256,7 +256,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
     subtitleZh: 'AI赋能：缩小差距，还是加剧青年职场不平等？',
     descriptionEn: 'Artificial intelligence is rapidly transforming how young people learn, work and build their careers. This Grand Debate asks: is AI truly democratising opportunity, or deepening existing inequalities? Format: 3 vs 3, Asian/Australasian Debate Format, 60 minutes.',
     descriptionZh: '人工智能正迅速改变青年的学习、工作方式与职业发展。本场青年大辩论将探讨：AI究竟是在打破机会壁垒，还是正在形成新的数字鸿沟？辩论形式：三对三，亚洲/澳亚式辩论赛制，共60分钟。',
-    panelistsPending: true
+    panelistsPending: false
   },
   {
     id: 'item-12',
@@ -364,7 +364,7 @@ export const SPEAKERS_2026: Speaker[] = [
     isModerator: false,
     organizationEn: 'COO & Co-founder, LAPIS Innovations Pte. Ltd.',
     organizationZh: 'LAPIS Innovations Pte. Ltd. 首席运营官兼联合创始人',
-    photoUrl: '',
+    photoUrl: '/speakers/cai-chenhui.jpg',
     bioEn: 'An emerging leader in deep-tech hardware innovation with a decade of R&D experience spanning intelligent robotics, advanced manufacturing equipment, and mechatronic systems. Currently serving as the COO and Co-founder of LAPIS Innovations Pte. Ltd., Mr. Cai drives the development of next-generation powder-free metal additive manufacturing technology. This leadership encompasses the entire product lifecycle, from conceptual design and hardware/software development to prototype iteration and supply chain establishment.\n\nPreviously, Mr. Cai held core R&D and team leadership roles across prestigious institutions, including the Nanyang Technological University (NTU) Robotics Research Centre, the Advanced Materials Design and Synthesis Laboratory, and the Hyundai-NTU-A*STAR Corporate Lab. Specialising in product definition, technical solution design, and prototype execution, Mr. Cai possesses a hybrid capability to bridge academic research with industrial demand, successfully translating cutting-edge technologies into practical, real-world solutions. Deeply committed to original technology accumulation and intellectual property protection, the portfolio includes 11 patents as the first applicant and five technical disclosures as the first inventor.',
     bioZh: '深科技硬件创新领域的新锐领袖，在智能机器人、先进制造装备及机电系统研发方面拥有十年深厚经验。现任 LAPIS Innovations Pte. Ltd. 首席运营官兼联合创始人，主导新一代无粉末金属增材制造技术的研发与落地。其领导力贯穿完整的产品全生命周期，从概念设计、软硬件开发，到原型迭代及供应链体系搭建。\n\n此前，蔡先生曾在南洋理工大学（NTU）机器人研究中心、先进材料设计与合成实验室，以及现代汽车-南大-新加坡科技研究局企业联合实验室等顶尖科研机构担任核心研发及团队领导职务。他精于产品定义、技术方案设计及原型落地，兼具连接学术前沿与产业实际需求的复合能力，成功将尖端科技转化为务实可行的现实解决方案。他始终致力于原创技术的积累与知识产权保护，作为第一申请人拥有11项专利，并作为第一发明人拥有5项技术交底。'
   },
@@ -379,7 +379,7 @@ export const SPEAKERS_2026: Speaker[] = [
     isModerator: false,
     organizationEn: 'Founder, Storyworld.AI',
     organizationZh: 'Storyworld.AI 创始人',
-    photoUrl: '',
+    photoUrl: '/speakers/glax-low.jpg',
     bioEn: 'Glax Low is the Founder of Storyworld.AI, where he is building a tech platform that strives to make AI video accessible, easy & fun.\n\nHe is now raising in San Francisco and Los Angeles to build a global company started in Singapore.\n\nBefore Storyworld.AI, he co-founded Rojak Media and Commerce.sg. Together they have done over 7 figures in revenue and 100+ projects in 10+ countries, for clients like the Singapore Grand Prix, CNA and Coinbase.\n\nGlax sits on the Singapore AI Association\'s Council for Youth Engagement, where he organised the first Singapore AI Youth Festival. He studies Banking and Finance at NTU Business on the Nanyang Scholarship.',
     bioZh: '刘轩铭（Glax Low）是 Storyworld.AI 的创始人，正致力于构建一个让 AI 视频变得触手可及、简单且有趣的科技平台。\n\n他目前正在旧金山和洛杉矶进行融资，旨在打造一家发源于新加坡的全球化企业。\n\n在创立 Storyworld.AI 之前，他曾联合创立 Rojak Media 与 Commerce.sg。两家企业累计创造了七位数的营业额，并在10多个国家完成了100多个项目，服务客户包括新加坡大奖赛（Singapore Grand Prix）、亚洲新闻台（CNA）及 Coinbase。\n\n刘轩铭现任新加坡人工智能协会青年参与委员会委员，并曾组织举办首届新加坡AI青年节。他荣获南洋奖学金，目前就读于南洋理工大学商学院银行与金融专业。'
   },
@@ -409,7 +409,7 @@ export const SPEAKERS_2026: Speaker[] = [
     isModerator: true,
     organizationEn: 'Member of BCYC',
     organizationZh: '通商中国青年连线成员',
-    photoUrl: '',
+    photoUrl: '/speakers/jessica-zhang.jpg',
     bioEn: 'Jessica Zhang is a Member of the Business China Youth Chapter (BCYC). She is a data scientist at SAP, working on research and development on the award-winning Document AI product. Her expertise lies in artificial intelligence, specifically in fields such as information extraction, large language models, and AI evaluation.\n\nWithin the Business China community, she first worked with the FutureChina team as an intern in 2019 before joining the BCYC community and has been an active participant and organising committee for the learning journeys.\n\nBeyond her work, Jessica is always on a journey of learning and discovery, from deepening her understanding of how AI models are trained to furthering her studies and even becoming a certified scuba diver.',
     bioZh: '张申佳（Jessica Zhang）是通商中国青年连线（BCYC）成员。她是 SAP 的一名数据科学家，负责其屡获殊荣的 Document AI 产品的研发工作。她的专业领域集中于人工智能，尤其在信息提取、大语言模型以及 AI 评估等方向拥有深厚积淀。\n\n在通商中国大家庭中，她于2019年首次以实习生身份加入慧眼中国团队，随后加入 BCYC 社群，并一直作为核心成员积极参与和筹办青年研学之旅。\n\n工作之余，申佳始终保持着探索与求知的热情，无论是深入探索 AI 模型的训练机制，还是精进学术深造，甚至成为了一名持证潜水员。'
   },
@@ -602,8 +602,8 @@ export const TRANSLATIONS = {
     speakersClickHint: 'Click on any speaker to view their biography',
     clickToReadBio: 'Read Bio',
     panelPendingNote: '1 more speaker TBC',
-    debatePendingNote: '1 more speaker TBC',
-    debateModeratorPendingNote: 'Moderator (TBC)',
+    debatePendingNote: '',
+    debateModeratorPendingNote: '',
     speakerPendingChip: 'Speaker (TBC)',
     moderatorTag: 'Moderator',
     speakerTag: 'Speaker',
@@ -676,8 +676,8 @@ export const TRANSLATIONS = {
     speakersClickHint: '点击卡片查看嘉宾完整履历',
     clickToReadBio: '查看完整履历',
     panelPendingNote: '1名研讨嘉宾待定',
-    debatePendingNote: '1名辩论嘉宾待定',
-    debateModeratorPendingNote: '辩论主持人（待定）',
+    debatePendingNote: '',
+    debateModeratorPendingNote: '',
     speakerPendingChip: '嘉宾（待定）',
     moderatorTag: '主持人',
     speakerTag: '演讲嘉宾',
