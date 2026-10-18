@@ -399,29 +399,14 @@ export const SPEAKERS_2026: Speaker[] = [
     bioZh: '刘浩新先生是资深科技行业领袖，在亚洲、东欧、中东及拉丁美洲拥有超过三十年的丰富经验，在日新月异的技术变革中重新诠释领导力。他曾任NCS集团企业发展执行合伙人，负责中国及香港地区的业务。在此之前，他曾任新加坡资讯通信媒体发展局（IMDA）助理局长。他还曾任星和电信（StarHub）消费者业务主管兼首席营销官，并在联想（Lenovo）和IBM担任全球及区域领导职务。目前，他在多个董事会和咨询委员会任职。'
   },
   {
-    id: 'jessica-zhang',
-    name: 'Jessica Zhang',
-    nameZh: '张申佳',
-    sessionTagEn: 'Debate',
-    sessionTagZh: '大辩论',
-    roleTagEn: 'Moderator',
-    roleTagZh: '主持人',
-    isModerator: true,
-    organizationEn: 'Member of BCYC',
-    organizationZh: '通商中国青年连线成员',
-    photoUrl: '/speakers/jessica-zhang.jpg',
-    bioEn: 'Jessica Zhang is a Member of the Business China Youth Chapter (BCYC). She is a data scientist at SAP, working on research and development on the award-winning Document AI product. Her expertise lies in artificial intelligence, specifically in fields such as information extraction, large language models, and AI evaluation.\n\nWithin the Business China community, she first worked with the FutureChina team as an intern in 2019 before joining the BCYC community and has been an active participant and organising committee for the learning journeys.\n\nBeyond her work, Jessica is always on a journey of learning and discovery, from deepening her understanding of how AI models are trained to furthering her studies and even becoming a certified scuba diver.',
-    bioZh: '张申佳（Jessica Zhang）是通商中国青年连线（BCYC）成员。她是 SAP 的一名数据科学家，负责其屡获殊荣的 Document AI 产品的研发工作。她的专业领域集中于人工智能，尤其在信息提取、大语言模型以及 AI 评估等方向拥有深厚积淀。\n\n在通商中国大家庭中，她于2019年首次以实习生身份加入慧眼中国团队，随后加入 BCYC 社群，并一直作为核心成员积极参与和筹办青年研学之旅。\n\n工作之余，申佳始终保持着探索与求知的热情，无论是深入探索 AI 模型的训练机制，还是精进学术深造，甚至成为了一名持证潜水员。'
-  },
-  {
     id: 'adam-chee',
     name: 'Prof. Adam Chee',
     nameZh: '徐伟翔教授',
     sessionTagEn: 'Debate',
     sessionTagZh: '大辩论',
-    roleTagEn: 'Speaker',
-    roleTagZh: '辩论嘉宾',
-    isModerator: false,
+    roleTagEn: 'Moderator',
+    roleTagZh: '主持人',
+    isModerator: true,
     organizationEn: 'Singapore General Hospital',
     organizationZh: '新加坡中央医院',
     photoUrl: '/speakers/adam-chee.jpg',
@@ -466,17 +451,16 @@ export const FAQ_ITEMS: FAQItem[] = [];
 export const PARTNERS: Partner[] = [];
 
 // =========================================================================
-// OFFICIAL PARTNER & SPONSOR LOGOS (Two Groups: Strategic Partner & Sponsors/Partners)
-// Structured for easy swap and extension.
+// OFFICIAL PARTNER & SPONSOR LOGOS (Update #13)
+// 22 Main Sponsors & Partners in exact flat order + 6 Community Partners (alphabetical)
 // =========================================================================
-export const STRATEGIC_PARTNER: PartnerLogo = {
-  id: 'nyc',
-  name: 'National Youth Council Singapore',
-  nameZh: '新加坡全国青年理事会',
-  logo: '/images/partners/01-nyc.png',
-};
-
-export const SPONSORS_ROW_1: PartnerLogo[] = [
+export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
+  {
+    id: 'nyc',
+    name: 'National Youth Council Singapore',
+    nameZh: '新加坡全国青年理事会',
+    logo: '/images/partners/01-nyc.png',
+  },
   {
     id: 'hyperforge',
     name: 'Hyperforge',
@@ -507,14 +491,23 @@ export const SPONSORS_ROW_1: PartnerLogo[] = [
     nameZh: '海信',
     logo: '/images/partners/hisense.png',
   },
-];
-
-export const PARTNERS_ROW_2: PartnerLogo[] = [
   {
     id: 'chagee',
     name: 'CHAGEE',
     nameZh: '霸王茶姬',
     logo: '/images/partners/05-chagee.png',
+  },
+  {
+    id: 'yuewen',
+    name: 'Yuewen Group',
+    nameZh: '阅文集团',
+    logo: '/images/partners/07-yuewen.png',
+  },
+  {
+    id: 'zall',
+    name: 'The Zall Bookstore',
+    nameZh: '卓尔书店',
+    logo: '/images/partners/08-zall.png',
   },
   {
     id: 'ocbc',
@@ -529,27 +522,15 @@ export const PARTNERS_ROW_2: PartnerLogo[] = [
     logo: '/images/partners/06-huawei.png',
   },
   {
-    id: 'yuewen',
-    name: 'Yuewen',
-    nameZh: '阅文集团',
-    logo: '/images/partners/07-yuewen.png',
+    id: 'storyworld',
+    name: 'Storyworld.ai',
+    nameZh: 'Storyworld.ai',
+    logo: '/images/partners/13-storyworld.png',
   },
   {
-    id: 'zall',
-    name: 'The Zall Bookstore',
-    nameZh: '卓尔书店',
-    logo: '/images/partners/08-zall.png',
-  },
-  {
-    id: 'csaia',
-    name: 'China-Singapore Artificial Intelligence Association',
-    nameZh: '中新人工智能协会',
-    logo: '/images/partners/09-csaia.png',
-  },
-  {
-    id: 'fuchsia-lane',
-    name: 'Fuchsia Lane Singapore',
-    nameZh: 'Fuchsia Lane 新加坡',
+    id: 'fuschia-lane',
+    name: 'Fuschia Lane',
+    nameZh: 'Fuschia Lane',
     logo: '/images/partners/10-fuchsialane.png',
   },
   {
@@ -558,17 +539,100 @@ export const PARTNERS_ROW_2: PartnerLogo[] = [
     nameZh: 'Teahills',
     logo: '/images/partners/11-teahills.jpg',
   },
+  {
+    id: 'sva',
+    name: 'Singapore Valley Awards',
+    nameZh: '新加坡硅谷奖 (SVA)',
+    logo: '/images/partners/16-sva.png',
+  },
+  {
+    id: 'gefa',
+    name: 'Great Eastern Financial Advisers (GEFA)',
+    nameZh: '大东方理财顾问 (GEFA)',
+    logo: '/images/partners/17-gefa.png',
+  },
+  {
+    id: 'arkverse',
+    name: 'Arkverse',
+    nameZh: 'Arkverse',
+    logo: '/images/partners/18-arkverse.png',
+  },
+  {
+    id: 'keenon',
+    name: 'KEENON Robotics',
+    nameZh: '擎朗智能 (KEENON)',
+    logo: '/images/partners/19-keenon.png',
+  },
+  {
+    id: 'ventured',
+    name: 'VentureD',
+    nameZh: 'VentureD',
+    logo: '/images/partners/20-ventured.png',
+  },
+  {
+    id: 'ppr',
+    name: 'Potong Pasir Residences (PPR)',
+    nameZh: '波东巴西公寓 (PPR)',
+    logo: '/images/partners/21-ppr.png',
+  },
+  {
+    id: 'nextbigthing',
+    name: 'Nextbigthing',
+    nameZh: 'Nextbigthing',
+    logo: '/images/partners/22-nextbigthing.png',
+  },
+  {
+    id: 'theonceextinctdinos',
+    name: 'TheOnceExtinctDinos',
+    nameZh: 'TheOnceExtinctDinos',
+    logo: '/images/partners/23-theonceextinctdinos.png',
+  },
 ];
 
-export const SPONSORS_AND_PARTNERS: PartnerLogo[] = [
-  ...SPONSORS_ROW_1,
-  ...PARTNERS_ROW_2,
+export const COMMUNITY_PARTNERS: PartnerLogo[] = [
+  {
+    id: 'beijing-ssa',
+    name: 'Beijing Singapore Students Association',
+    nameZh: '北京新加坡学生会 (BSSA)',
+    logo: '/images/community-partners/beijing-ssa.png',
+  },
+  {
+    id: 'nus-cpc',
+    name: 'NUS Career Planning Club',
+    nameZh: '新加坡国立大学职业规划社 (NUS CPC)',
+    logo: '/images/community-partners/nus-cpc.png',
+  },
+  {
+    id: 'nuscs',
+    name: 'NUS Chinese Society',
+    nameZh: '新加坡国立大学中文学会 (NUSCS)',
+    logo: '/images/community-partners/nuscs.png',
+  },
+  {
+    id: 'offerlah',
+    name: 'OfferLah',
+    nameZh: 'OfferLah',
+    logo: '/images/community-partners/offerlah.png',
+  },
+  {
+    id: 'shanghai-ssa',
+    name: 'Shanghai Singapore Students Association',
+    nameZh: '上海新加坡学生会 (SSSA)',
+    logo: '/images/community-partners/shanghai-ssa.png',
+  },
+  {
+    id: 'young-seakers',
+    name: 'The Young SEAkers',
+    nameZh: '青年东南亚领袖组织 (The Young SEAkers)',
+    logo: '/images/community-partners/young-seakers.png',
+  },
 ];
 
-export const PARTNER_LOGOS: PartnerLogo[] = [
-  STRATEGIC_PARTNER,
-  ...SPONSORS_AND_PARTNERS,
-];
+// Compatibility exports
+export const STRATEGIC_PARTNER: PartnerLogo = SPONSORS_AND_PARTNERS[0];
+export const SPONSORS_ROW_1: PartnerLogo[] = SPONSORS_AND_PARTNERS.slice(1, 6);
+export const PARTNERS_ROW_2: PartnerLogo[] = SPONSORS_AND_PARTNERS.slice(6);
+export const PARTNER_LOGOS: PartnerLogo[] = SPONSORS_AND_PARTNERS;
 
 export const TRANSLATIONS = {
   en: {
@@ -638,6 +702,9 @@ export const TRANSLATIONS = {
     singaporePartners: 'Singapore Partners',
     chinaPartners: 'China Partners',
     sponsors: 'Sponsors',
+    communityPartnersBadge: 'COMMUNITY PARTNERS',
+    communityPartnersTitle: 'Community Partners',
+    communityPartnersSubtitle: 'In collaboration with youth and student associations across the region.',
     hostPartnerNote: 'Temasek Polytechnic is confirmed as host venue partner for BCYF 2026.',
     logoPending: 'LOGO PENDING',
     andManyMore: 'and many more...',
@@ -712,6 +779,9 @@ export const TRANSLATIONS = {
     singaporePartners: '新加坡合作伙伴',
     chinaPartners: '中国合作伙伴',
     sponsors: '赞助机构',
+    communityPartnersBadge: '社区合作伙伴',
+    communityPartnersTitle: '社区合作伙伴',
+    communityPartnersSubtitle: '携手区域青年及学生组织，共创未来。',
     hostPartnerNote: '淡马锡理工学院为2026年通商中国青年论坛官方场地合作方。',
     logoPending: '标志待更新',
     andManyMore: '等等...',

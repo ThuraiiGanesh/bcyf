@@ -393,46 +393,12 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                       {/* Session 3 Debate Lineup (AI & Workforce Inequalities) */}
                       {item.sessionNumber === 3 && (
                         <div className="space-y-3 pt-1">
-                          {/* Debate Moderator: Jessica Zhang */}
+                          {/* Debate Moderator: Prof. Adam Chee */}
                           <div className="space-y-1.5">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
                               {isEn ? 'Debate Moderator' : '辩论主持人'}
                             </span>
                             <div className="max-w-md">
-                              <div
-                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'jessica-zhang') || null)}
-                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
-                              >
-                                <img
-                                  src="/speakers/jessica-zhang.jpg"
-                                  alt="Jessica Zhang"
-                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
-                                />
-                                <div className="min-w-0">
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Jessica Zhang' : '张申佳'}
-                                    </span>
-                                    <span className="text-[9px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full">
-                                      {isEn ? 'Moderator' : '主持人'}
-                                    </span>
-                                  </div>
-                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
-                                    {isEn ? 'Member of BCYC' : '通商中国青年连线成员'}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Debaters (Human Roster Complete) */}
-                          <div className="space-y-1.5">
-                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                              {isEn ? 'Debaters' : '辩论嘉宾'}
-                            </span>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                              {/* Confirmed Debater: Prof. Adam Chee */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'adam-chee') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
@@ -447,13 +413,25 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
                                       {isEn ? 'Prof. Adam Chee' : '徐伟翔教授'}
                                     </span>
+                                    <span className="text-[9px] font-mono font-bold text-brand-blue bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full">
+                                      {isEn ? 'Moderator' : '主持人'}
+                                    </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
                                     {isEn ? 'Singapore General Hospital' : '新加坡中央医院'}
                                   </p>
                                 </div>
                               </div>
+                            </div>
+                          </div>
 
+                          {/* Debaters (2 Confirmed Youth Debaters + 2 AI Debaters via CSAIA) */}
+                          <div className="space-y-1.5">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                              {isEn ? 'Debaters' : '辩论嘉宾'}
+                            </span>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                               {/* Confirmed Debater: Yiyang He */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'he-yiyang') || null)}
@@ -468,6 +446,9 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
                                       {isEn ? 'Yiyang He' : '何一阳'}
+                                    </span>
+                                    <span className="text-[9px] font-mono font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-full">
+                                      {isEn ? 'Youth Debater' : '青年辩手'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
@@ -491,9 +472,36 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
                                       {isEn ? 'Yi KaiZhi' : '蚁凯致'}
                                     </span>
+                                    <span className="text-[9px] font-mono font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-full">
+                                      {isEn ? 'Youth Debater' : '青年辩手'}
+                                    </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
                                     {isEn ? 'SagePaths Group' : '联智教育集团'}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* 2 AI Debaters via CSAIA Collaboration */}
+                              <div className="bg-gradient-to-br from-indigo-50/70 to-blue-50/60 rounded-xl border border-indigo-200/80 p-3 flex items-center gap-3 shadow-2xs">
+                                <div className="w-11 h-11 rounded-full bg-white border border-indigo-200 flex items-center justify-center p-1.5 shadow-xs shrink-0">
+                                  <img
+                                    src="/images/partners/09-csaia.png"
+                                    alt="CSAIA AI Collaboration"
+                                    className="w-full h-full object-contain"
+                                  />
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy">
+                                      {isEn ? '2x AI Debaters' : '2位 AI 辩手'}
+                                    </span>
+                                    <span className="text-[9px] font-mono font-bold text-indigo-700 bg-indigo-100/80 border border-indigo-200 px-1.5 py-0.5 rounded-full">
+                                      {isEn ? 'CSAIA AI' : 'CSAIA 智能体'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-600 truncate mt-0.5 font-medium">
+                                    {isEn ? 'In collaboration with CSAIA' : '与中新人工智能协会联合呈现'}
                                   </p>
                                 </div>
                               </div>

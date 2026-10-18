@@ -8,4 +8,5 @@ coverage/
 !.env.example
 bcyf web upload/
 Sponsor and Partner Logos*/
+new_sponsor_logos/
 .vercel/
