@@ -235,7 +235,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
     subtitleZh: '智能时代的"工作革命"：价值重构与青年机遇',
     descriptionEn: 'Emerging technologies and their associated industries are often indicative of future economic transformations. This panel explores three transformations — Future Media, Future Health and Future Connectivity — through cross-industry case studies, helping youths identify transferable competencies and adaptive mindsets for future-ready careers.',
     descriptionZh: '新兴科技及相关产业往往是经济模式转型的风向指标。本论坛将围绕未来媒体、未来健康与未来互联三大转型方向，通过跨行业案例研讨，帮助青年提炼可迁移的核心职业能力。',
-    panelistsPending: true
+    panelistsPending: false
   },
   {
     id: 'item-10',
@@ -665,7 +665,7 @@ export const TRANSLATIONS = {
     speakersSubtitle: 'Distinguished speakers, panelists, and moderators at BCYF 2026.',
     speakersClickHint: 'Click on any speaker to view their biography',
     clickToReadBio: 'Read Bio',
-    panelPendingNote: '1 more speaker TBC',
+    panelPendingNote: '',
     debatePendingNote: '',
     debateModeratorPendingNote: '',
     speakerPendingChip: 'Speaker (TBC)',
@@ -742,7 +742,7 @@ export const TRANSLATIONS = {
     speakersSubtitle: '2026年通商中国青年论坛特邀嘉宾、研讨嘉宾与主持人阵容。',
     speakersClickHint: '点击卡片查看嘉宾完整履历',
     clickToReadBio: '查看完整履历',
-    panelPendingNote: '1名研讨嘉宾待定',
+    panelPendingNote: '',
     debatePendingNote: '',
     debateModeratorPendingNote: '',
     speakerPendingChip: '嘉宾（待定）',
