@@ -221,7 +221,7 @@ export const RECOMMENDED_FINAL_TIMELINE_2026: TimelineItem[] = [
     speakerRoleEn: 'Guest of Honour & Fireside Chat Speaker',
     speakerRoleZh: '主礼嘉宾兼炉边对话演讲嘉宾',
     speakerPhoto: '/desmond-tan-headshot.jpg',
-    moderatorPending: true
+    moderatorPending: false
   },
   {
     id: 'item-9',
@@ -414,23 +414,8 @@ export const SPEAKERS_2026: Speaker[] = [
     bioZh: '徐伟翔副教授是数字健康与健康信息学领域的知名领袖，现任新加坡中央医院（SGH）人工智能办公室主任。\n\n他在医疗健康、科技、创新及商业转型领域拥有深厚积淀，经验涵盖临床信息系统、战略咨询、标准制定、AI智慧医疗以及健康体系变革。\n\n徐伟翔曾参与亚太与中东地区多个项目，推动循证及科技赋能的医疗解决方案落地。他还在HL7新加坡、HL7亚洲、ISO TC215、世卫组织（WHO）、亚太经合组织（APEC）及区域内多所知名高校担任重要领导职务。'
   },
   {
-    id: 'he-yiyang',
-    name: 'Yiyang He',
-    nameZh: '何一阳',
-    sessionTagEn: 'Debate',
-    sessionTagZh: '大辩论',
-    roleTagEn: 'Speaker',
-    roleTagZh: '辩论嘉宾',
-    isModerator: false,
-    organizationEn: 'National University of Singapore',
-    organizationZh: '新加坡国立大学',
-    photoUrl: '/speakers/he-yiyang.jpg',
-    bioEn: 'He Yiyang is an undergraduate at the National University of Singapore studying Sociology and Political Science, and is part of the honours programme at NUS College. His research focuses on how technological change is reshaping education and work.\n\nHe has studied how universities are responding to generative AI, particularly its effects on teaching and assessment, as well as how AI may change occupations, job tasks and the skills workers need. He is also interested in who benefits from these changes, especially how unequal access to AI tools and training may produce very different outcomes across groups. His wider research also looks at flexible work, overwork and workplace practices, which has led to a broader interest in how institutions shape people\'s experiences of work. More recently, he has also been exploring the environmental side of AI, including data-centre growth, energy demand, sustainability and questions of a just transition. Outside research, Yiyang has worked in people consulting, strategic planning and strategic communications across the public and private sectors. He previously served as President of the NUS College Club, representing more than 1,500 students.',
-    bioZh: '何一阳是新加坡国立大学社会学与政治学本科生，也是国大荣誉学院（NUS College）成员。他的研究聚焦科技变革如何重塑教育与工作范式。\n\n他深入探讨了大学对生成式AI的应对机制，特别是其对教学与评估的影响，以及AI对未来职业结构、技能需求和工作任务的深远重构。他关注技术红利的分配公平性，探讨AI工具与培训获取不平等带来的影响。\n\n其研究领域还延伸至灵活工时、过度工作与职场文化，并拓展至AI的环境议题，包括数据中心增长、能源消耗、可持续性与公正转型。在学术研究之外，一阳曾在公共与私营部门从事人力咨询、战略规划及品牌传播工作，并曾担任拥有1500多名学生的国大学院俱乐部主席。'
-  },
-  {
     id: 'yi-kaizhi',
-    name: 'Yi KaiZhi',
+    name: 'Yi Kaizhi',
     nameZh: '蚁凯致',
     sessionTagEn: 'Debate',
     sessionTagZh: '大辩论',
@@ -442,6 +427,21 @@ export const SPEAKERS_2026: Speaker[] = [
     photoUrl: '/speakers/yi-kaizhi.jpg',
     bioEn: 'An education entrepreneur raised in Singapore’s school system. Today I’m a Partner at SagePaths Group, a one-stop education platform serving families in Singapore since 2006 serving more than 10,000 families in Singapore, covering school selection, tutoring, university applications, student housing, study tours and family relocation. I lead SagePaths Global Education, helping families plan every step from their first school in Singapore to university and beyond.',
     bioZh: '在新加坡教育体系中成长的一名教育创业者。现任联智教育集团（SagePaths Group）合伙人。联智作为一站式教育平台，自2006年起扎根新加坡，已累计服务超过10,000个家庭，业务涵盖择校规划、课后辅导、大学升学、学生公寓、研学游学及家庭移居等。目前我负责联智国际教育（SagePaths Global Education），致力于协助家庭规划从新加坡入学到大学及未来的每一步关键旅程。'
+  },
+  {
+    id: 'he-yiyang',
+    name: 'He Yiyang',
+    nameZh: '何一阳',
+    sessionTagEn: 'Debate',
+    sessionTagZh: '大辩论',
+    roleTagEn: 'Speaker',
+    roleTagZh: '辩论嘉宾',
+    isModerator: false,
+    organizationEn: 'National University of Singapore',
+    organizationZh: '新加坡国立大学',
+    photoUrl: '/speakers/he-yiyang.jpg',
+    bioEn: 'He Yiyang is an undergraduate at the National University of Singapore studying Sociology and Political Science, and is part of the honours programme at NUS College. His research focuses on how technological change is reshaping education and work.\n\nHe has studied how universities are responding to generative AI, particularly its effects on teaching and assessment, as well as how AI may change occupations, job tasks and the skills workers need. He is also interested in who benefits from these changes, especially how unequal access to AI tools and training may produce very different outcomes across groups. His wider research also looks at flexible work, overwork and workplace practices, which has led to a broader interest in how institutions shape people\'s experiences of work. More recently, he has also been exploring the environmental side of AI, including data-centre growth, energy demand, sustainability and questions of a just transition. Outside research, Yiyang has worked in people consulting, strategic planning and strategic communications across the public and private sectors. He previously served as President of the NUS College Club, representing more than 1,500 students.',
+    bioZh: '何一阳是新加坡国立大学社会学与政治学本科生，也是国大荣誉学院（NUS College）成员。他的研究聚焦科技变革如何重塑教育与工作范式。\n\n他深入探讨了大学对生成式AI的应对机制，特别是其对教学与评估的影响，以及AI对未来职业结构、技能需求和工作任务的深远重构。他关注技术红利的分配公平性，探讨AI工具与培训获取不平等带来的影响。\n\n其研究领域还延伸至灵活工时、过度工作与职场文化，并拓展至AI的环境议题，包括数据中心增长、能源消耗、可持续性与公正转型。在学术研究之外，一阳曾在公共与私营部门从事人力咨询、战略规划及品牌传播工作，并曾担任拥有1500多名学生的国大学院俱乐部主席。'
   }
 ];
 

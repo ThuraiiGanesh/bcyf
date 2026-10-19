@@ -317,7 +317,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                             </span>
 
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                              {/* Confirmed Panelist: Zhang Tianyi */}
+                              {/* Confirmed Panelist 1: Zhang Tianyi */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'zhang-tianyi') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
@@ -339,29 +339,7 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* Confirmed Panelist: Glax Low */}
-                              <div
-                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'glax-low') || null)}
-                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
-                              >
-                                <img
-                                  src="/speakers/glax-low.jpg"
-                                  alt="Glax Low"
-                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
-                                />
-                                <div className="min-w-0">
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Glax Low' : '刘轩铭'}
-                                    </span>
-                                  </div>
-                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
-                                    {isEn ? 'Founder, Storyworld.AI' : 'Storyworld.AI 创始人'}
-                                  </p>
-                                </div>
-                              </div>
-
-                              {/* Confirmed Panelist: Cai Chenhui */}
+                              {/* Confirmed Panelist 2: Cai Chenhui */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'cai-chenhui') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
@@ -379,6 +357,28 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
                                     {isEn ? 'COO & Co-founder, LAPIS Innovations Pte. Ltd.' : 'LAPIS Innovations Pte. Ltd. 首席运营官兼联合创始人'}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Confirmed Panelist 3: Glax Low */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'glax-low') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <img
+                                  src="/speakers/glax-low.jpg"
+                                  alt="Glax Low"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'Glax Low' : '刘轩铭'}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'Founder, Storyworld.AI' : 'Storyworld.AI 创始人'}
                                   </p>
                                 </div>
                               </div>
@@ -422,55 +422,30 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                             </div>
                           </div>
 
-                          {/* Debaters (2 Confirmed Youth Debaters + 2 AI Debaters via CSAIA) */}
+                          {/* Debaters (2 Confirmed Debaters) */}
                           <div className="space-y-1.5">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
                               {isEn ? 'Debaters' : '辩论嘉宾'}
                             </span>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                              {/* Confirmed Debater: Yiyang He */}
-                              <div
-                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'he-yiyang') || null)}
-                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
-                              >
-                                <img
-                                  src="/speakers/he-yiyang.jpg"
-                                  alt="Yiyang He"
-                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
-                                />
-                                <div className="min-w-0">
-                                  <div className="flex items-center gap-1.5">
-                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Yiyang He' : '何一阳'}
-                                    </span>
-                                    <span className="text-[9px] font-mono font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-full">
-                                      {isEn ? 'Youth Debater' : '青年辩手'}
-                                    </span>
-                                  </div>
-                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
-                                    {isEn ? 'National University of Singapore' : '新加坡国立大学'}
-                                  </p>
-                                </div>
-                              </div>
-
-                              {/* Confirmed Debater: Yi KaiZhi */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-2xl">
+                              {/* Confirmed Debater 1: Yi Kaizhi */}
                               <div
                                 onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'yi-kaizhi') || null)}
                                 className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
                               >
                                 <img
                                   src="/speakers/yi-kaizhi.jpg"
-                                  alt="Yi KaiZhi"
+                                  alt="Yi Kaizhi"
                                   className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
                                 />
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
                                     <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
-                                      {isEn ? 'Yi KaiZhi' : '蚁凯致'}
+                                      {isEn ? 'Yi Kaizhi' : '蚁凯致'}
                                     </span>
                                     <span className="text-[9px] font-mono font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-full">
-                                      {isEn ? 'Youth Debater' : '青年辩手'}
+                                      {isEn ? 'Debater' : '辩论嘉宾'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-slate-500 truncate mt-0.5">
@@ -479,26 +454,27 @@ export default function AgendaSection({ language }: AgendaSectionProps) {
                                 </div>
                               </div>
 
-                              {/* 2 AI Debaters via CSAIA Collaboration */}
-                              <div className="bg-gradient-to-br from-indigo-50/70 to-blue-50/60 rounded-xl border border-indigo-200/80 p-3 flex items-center gap-3 shadow-2xs">
-                                <div className="w-11 h-11 rounded-full bg-white border border-indigo-200 flex items-center justify-center p-1.5 shadow-xs shrink-0">
-                                  <img
-                                    src="/images/partners/09-csaia.png"
-                                    alt="CSAIA AI Collaboration"
-                                    className="w-full h-full object-contain"
-                                  />
-                                </div>
+                              {/* Confirmed Debater 2: He Yiyang */}
+                              <div
+                                onClick={() => setSelectedBioSpeaker(SPEAKERS_2026.find(s => s.id === 'he-yiyang') || null)}
+                                className="bg-white rounded-xl border border-blue-200/80 p-3 flex items-center gap-3 shadow-2xs hover:shadow-md hover:border-brand-blue/50 transition-all cursor-pointer group"
+                              >
+                                <img
+                                  src="/speakers/he-yiyang.jpg"
+                                  alt="He Yiyang"
+                                  className="w-11 h-11 rounded-full object-cover border border-brand-blue/30 shadow-xs shrink-0 group-hover:scale-105 transition-transform"
+                                />
                                 <div className="min-w-0">
                                   <div className="flex items-center gap-1.5">
-                                    <span className="text-xs sm:text-sm font-bold text-brand-navy">
-                                      {isEn ? '2x AI Debaters' : '2位 AI 辩手'}
+                                    <span className="text-xs sm:text-sm font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                                      {isEn ? 'He Yiyang' : '何一阳'}
                                     </span>
-                                    <span className="text-[9px] font-mono font-bold text-indigo-700 bg-indigo-100/80 border border-indigo-200 px-1.5 py-0.5 rounded-full">
-                                      {isEn ? 'CSAIA AI' : 'CSAIA 智能体'}
+                                    <span className="text-[9px] font-mono font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-full">
+                                      {isEn ? 'Debater' : '辩论嘉宾'}
                                     </span>
                                   </div>
-                                  <p className="text-[11px] text-slate-600 truncate mt-0.5 font-medium">
-                                    {isEn ? 'In collaboration with CSAIA' : '与中新人工智能协会联合呈现'}
+                                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                                    {isEn ? 'National University of Singapore' : '新加坡国立大学'}
                                   </p>
                                 </div>
                               </div>

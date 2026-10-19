@@ -174,7 +174,7 @@ export default function SpeakersSection({ language }: SpeakersSectionProps) {
                             loading="lazy"
                           />
                         ) : (
-                          /* Initial / Silhouette Avatar Placeholder (e.g. Glax Low, Jessica Zhang) */
+                          /* Initial / Silhouette Avatar Placeholder */
                           <div className="w-full h-full rounded-full border-4 border-white bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center justify-center text-brand-blue">
                             <span className="text-2xl sm:text-3xl font-display font-extrabold tracking-wider">
                               {speaker.name
